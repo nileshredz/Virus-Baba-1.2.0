@@ -1,0 +1,1643 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Login in Virus Baba</title>
+
+  </head>
+
+  <body>
+    {% block content %}
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent;">
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'logo.png' %}" width="40%" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="background-color:#D0D3D4;"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" style="color:white">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticAbout">About</a>
+          </li>
+          <!--Modal for About-->
+          <div class="modal fade" id="staticAbout" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">About:</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img src={% static 'logob.png' %} />
+                  <p style="color:black;">Virus Baba is an Application which Enables the Impossible to Test 1.3 Billion Indians possible. This application Promotes Social Distancing and Testin of COVID-19 with ease. Depending upon the Questionnaires you Answer it Suggests you Susceptible Score of COVID-19 and Helps you book an Appointment in your Nearest Test Centres. </p>
+                </div>
+                <div class="modal-footer">
+                 <button type="button" class="btn btn-primary" data-dismiss="modal">Understood</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticContact">Contact</a>
+          </li>
+          <!--Modal for Contact-->
+          <div class="modal fade" id="staticContact" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Contact:</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img src={% static 'logob.png' %} />
+                  <p style="color:black;" align="center">Application Developed by: Nilesh .D. Ohol </p>
+                  <p style="color:black;">Email ID: <a href="">nileshohol@live.in</a></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Understood</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="/stat/" style="color:white" >Statistics</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/blood/" style="color:white" >Blood Donation &amp Requirement</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/oxygen/" style="color:white" >Oxygen Requirement</a>
+          </li>
+        </ul>
+      </div>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <a type="button" style="font-family:montserrat;color:white;" data-toggle="modal" data-target="#staticLogin">Login/Sign Up</a>
+      </div>
+      <!--Modal for Login-->
+      <div class="modal fade" id="staticLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalScrollableTitle">Login:</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="/profile/" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" name="emailLogin" aria-describedby="emailHelp">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" name="passLogin">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Login</button>
+                <br>
+                <br>
+
+                <p style="color:black;"> If you dont have an Account Click on SignUp.</p>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <a type="button" href="/signUp/" class="btn btn-primary">Sign Up</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+    </nav>
+<a class="weatherwidget-io" href="https://forecast7.com/en/20d5978d96/india/" data-label_1="INDIA" data-label_2="WEATHER" data-font="Open Sans" data-icons="Climacons Animated" data-textcolor="#ffffff" >INDIA WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+    <br><br><br>
+<!--;margin-left:auto;margin-right:auto-->
+
+    <h1 class="text-center" style="font-family:montserrat;color:white">Blood Banks in India</h1>
+    <br><br>
+
+
+
+
+
+    <br>
+      
+    <style>
+    #map { 
+    width: 100%; 
+    height: 600px; 
+    background-color: grey; 
+  }
+    </style>
+    <br><br><br><br><br>
+
+    <div class="card" style="width:90% ;margin-right:auto;margin-left:auto;">
+  <div id="map"></div> 
+  <div class="card-body">
+      <h5 class="card-title"><strong>Blood Banks:</strong></h5>
+    <!--<p class="card-text">You will be adding markers to this Map using Js.</p>-->
+    <p class="card-text" style="color:black;">Click on the Marker to see the Information about the Blood Donation..</p>
+    <!--<p class="card-text"><strong>Note: Incase if you have any doubts/issue: <a href="tel:+91-9145702469">Call Me</a></strong></p>-->
+    
+  </div>  
+</div>
+<script>
+ let map;
+ //========Add latitude and Longitude Here============//
+ var ash = {lat:19.029736085961513, lng:72.84693609703794};
+var bor = {lat:19.268334156747635, lng:72.85311515799411};
+var sant = {lat:19.12113094112405, lng:72.85448844892002};
+var sama = {lat:19.103613438923144, lng:72.91010673141939};
+var mato = {lat:19.20026093031321, lng:72.95267875012262};
+var navj = {lat:19.24564621723224, lng:72.85174186706821};
+var mana = {lat:19.15226858209918, lng:72.85036857614229};
+var anvi = {lat:19.093880691544626, lng:72.90255363132688};
+var abd = {lat:18.958712645135925, lng:72.83497747270093};
+var sub = {lat:19.20285471287197, lng:72.84693534882751};
+var pra = {lat:19.20285471287197, lng:72.84693534882751};
+var wes = {lat:19.060785070849995, lng:72.84212883058683};
+var pal = {lat:19.06727492924385, lng:72.91285331327121};
+var mal = {lat:19.20026093031321, lng:72.85311515799411};
+var har = {lat:18.976306892388315, lng:72.81543017260842};
+var bomb = {lat:18.952280008008714, lng:72.8264165000157};
+var sir = {lat:18.98215074601287, lng:72.82710314547865};
+var san = {lat:19.20232433822225, lng:72.8514488999232};
+var blo = {lat:19.016525563983155, lng:72.83817426353433 };
+var mee = {lat:19.18026350283544, lng:72.84556280611204};
+var mah = {lat:19.15226858209918, lng:72.84487541243867};
+var sub = {lat:18.97323751908677, lng:72.82940335446027};
+var barc = {lat:19.061419255231904, lng:72.91248670666168};
+var sirj = {lat:18.978326977237625, lng:72.83008925110707};
+var nair = {lat:18.9897009906815, lng:72.8208163999232};
+var glo = {lat:19.01502083788001, lng:72.83866918196004};
+var tata = {lat:19.014915602656522, lng:72.84004172413212};
+var rot = {lat:19.134216179748627, lng:72.84278755723254};
+var byl = {lat:18.987437384221433, lng:72.82287409005784};
+var lila = {lat:19.061983193681737, lng:72.82561992316312};
+var kj = {lat:19.101461897993328, lng:72.92106289376979};
+var sev = {lat:19.12341577798015, lng:72.8784901263249};
+var blo = {lat:19.215990741219258, lng:72.97968800908978};
+var kap = {lat:19.155096453906097, lng:72.8455303953639};
+var vaidya = {lat:19.203084536742566, long:72.96180462714547};
+var esic = {lat:19.1439642263533, lng:72.8668156559788};
+var vn = {lat:19.119207645397992, lng:72.82630282600671};
+var Navjivan = {lat:19.201541973199912, lng:72.96589935446023};
+var drrn = {lat:19.11780506815115, lng:72.83866169547092};
+var tri = {lat:19.24300182068778, lng:72.97652634538616};
+
+
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: {lat:19.11780506815115, lng:72.83866169547092},
+    
+          zoom: 10,
+        });
+        
+
+          
+        
+        //==========================================================Format=====================================================================//
+
+        //var markerN = new google.maps.Marker({     
+        //  position: VARIABLE NAME HERE Eg. viva,
+        //  map: map,
+        //  title: 'NAME OF THE PLACE',
+        //  animation: google.maps.Animation.BOUNCE
+        //});
+    
+    //var contentStringN = '<div id="content">'+
+        //    '<div id="siteNotice">'+
+        //    '</div>'+
+        //    '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>NAME OF THE PLACE</strong></h4>'+
+        //    '<div id="bodyContent">'+
+        //    '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+         //   '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">2500</h5>'+
+        //'<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        //'<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:tELEPHONE NUMBER">+91-9XXXXXXXX</a></h5>'+
+        //    '</div>'+
+        //    '</div>';
+
+        //var infowindowN = new google.maps.InfoWindow({
+        //  content: contentString1
+        //});
+
+       
+        //markerN.addListener('click', function() {
+        //  infowindow1.open(map, markerN);
+        //});
+    
+    //markerN.addListener('dblclick', function() {
+        //   document.getElementById("staticLocation").value = markerN['title'];
+        //});
+
+        //======================================================Example of markers============================================================//
+        var marker1 = new google.maps.Marker({
+          position: ash,
+          map: map,
+          title: 'Ashirwad Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString1 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Ashirwad Blood Bank, No.807, 2nd Floor, A-Wing, Imperial Mahal, Above H. D. F. C Bank, Dr Baba Saheb Ambedkar Rd, Dadar East, Mumbai, Maharashtra 400014</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">10</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">5</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912224154826">+912224154826</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow1 = new google.maps.InfoWindow({
+          content: contentString1
+        });
+
+       
+        marker1.addListener('click', function() {
+          infowindow1.open(map, marker1);
+        });
+    
+    marker1.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker1['title'];
+        });
+
+        // mark 2
+
+        var marker2 = new google.maps.Marker({
+          position: bor,
+          map: map,
+          title: 'Borivali Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString2 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Borivali Blood Bank, CTS 21/B, 1St Floor BMC market village, behind shagun hotel, Mandapeshwar, Dahisar West, Mumbai, Maharashtra 400068</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">500</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912228936203">tel: +912228936203</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow2 = new google.maps.InfoWindow({
+          content: contentString2
+        });
+
+       
+        marker2.addListener('click', function() {
+          infowindow2.open(map, marker2);
+        });
+    
+    marker2.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker2['title'];
+        });
+
+        // Marker 3
+
+        var marker3 = new google.maps.Marker({
+          position: sant,
+          map: map,
+          title: 'Sant Nirankari Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString3 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Sant Nirankari Blood Bank, O-9, Western Express Hwy, Navpada, Airports Authority Colony, Vile Parle, Mumbai, Maharashtra 400047</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">1000</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">456</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912226195539">+912226195539</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow3 = new google.maps.InfoWindow({
+          content: contentString3
+        });
+
+       
+        marker3.addListener('click', function() {
+          infowindow3.open(map, marker3);
+        });
+    
+    marker3.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker3['title'];
+        });
+
+        // Marker 4 
+
+        var marker4 = new google.maps.Marker({
+          position: sama,
+          map: map,
+          title: 'Samarpan Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString4 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong> Samarpan Blood Bank, Sarvodaya Hospital, Office Building, 2nd Floor, L B S, Lal Bahadur Shastri Rd, Ghatkopar West, Mumbai, Maharashtra 400086</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">2500</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">74</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="+912225100100">+912225100100</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow4 = new google.maps.InfoWindow({
+          content: contentString4
+        });
+
+       
+        marker4.addListener('click', function() {
+          infowindow4.open(map, marker4);
+        });
+    
+    marker4.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker4['title'];
+        });
+        
+        // Marker 5 
+
+        var marker5 = new google.maps.Marker({
+          position: mato,
+          map: map,
+          title: 'Matoshree Valbai Mulji Shah Arpan Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString5 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Matoshree Valbai Mulji Shah Arpan Blood Bank, 1st Floor, Mid Town Plaza, Signal Mulund (W, near R-Mall, Shivaji Nagar, Mumbai, Maharashtra 400080</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">8328</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow5 = new google.maps.InfoWindow({
+          content: contentString5
+        });
+
+       
+        marker5.addListener('click', function() {
+          infowindow5.open(map, marker5);
+        });
+    
+    marker5.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker5['title'];
+        });
+
+        // Marker 6
+
+        var marker6 = new google.maps.Marker({
+          position: navj,
+          map: map,
+          title: 'Navjivan Blood Bank And Lab, "Abhilasha II", Shop No.1, Punjabi Lane, Mumbai, Maharashtra 400092.',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString6 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Navjivan Blood Bank And Lab, "Abhilasha II", Shop No.1, Punjabi Lane, Mumbai, Maharashtra 400092</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">773</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">90</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:912228921727"> +912228921727</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow6 = new google.maps.InfoWindow({
+          content: contentString6
+        });
+
+       
+        marker6.addListener('click', function() {
+          infowindow6.open(map, marker6);
+        });
+    
+    marker6.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker6['title'];
+        });
+
+        //Marker 7 
+
+        var marker7 = new google.maps.Marker({
+          position: mana,
+          map: map,
+          title: 'Manas Blood Bank, 1st Floor, Grace Plaza, Swami Vivekananda Rd, Jogeshwari West, Mumbai, Maharashtra 400102',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString7 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Manas Blood Bank, 1st Floor, Grace Plaza, Swami Vivekananda Rd, Jogeshwari West, Mumbai, Maharashtra 400102</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">7272</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">756</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:912226784546">+912226784546</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow7 = new google.maps.InfoWindow({
+          content: contentString7
+        });
+
+       
+        marker7.addListener('click', function() {
+          infowindow7.open(map, marker7);
+        });
+    
+    marker7.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker7['title'];
+        });
+
+        // Marker 8 
+
+        var marker8 = new google.maps.Marker({
+          position: anvi,
+          map: map,
+          title: 'Anviksha blood bank, Paras Darshan, Mahatma Gandhi Rd, Ghatkopar East, Mumbai, Maharashtra 400077, 21026290',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString8 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Anviksha blood bank, Paras Darshan, Mahatma Gandhi Rd, Ghatkopar East, Mumbai, Maharashtra 400077</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">8700</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">630</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:21022690">210226290</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow8 = new google.maps.InfoWindow({
+          content: contentString8
+        });
+
+       
+        marker8.addListener('click', function() {
+          infowindow8.open(map, marker8);
+        });
+    
+    marker8.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker8['title'];
+        });
+
+      // Marker 9 
+
+      var marker9 = new google.maps.Marker({
+          position: abd,
+          map: map,
+          title: 'Abdul Fazalbhoy Blood Bank, 5, Mahapalika Marg, Dhobi Talao, Chhatrapati Shivaji Terminus Area, Fort, Mumbai, Maharashtra 400001',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString9 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Abdul Fazalbhoy Blood Bank, 5, Mahapalika Marg, Dhobi Talao, Chhatrapati Shivaji Terminus Area, Fort, Mumbai, Maharashtra 400001</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">843</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow9 = new google.maps.InfoWindow({
+          content: contentString9
+        });
+
+       
+        marker9.addListener('click', function() {
+          infowindow9.open(map, marker9);
+        });
+    
+    marker9.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker9['title'];
+        });
+
+        //Marker 10
+
+        var marker10 = new google.maps.Marker({
+          position: sub,
+          map: map,
+          title: 'Suburban Hitech Blood Bank, Shagun Building, No. 206, Rani Sati Rd, Malad East, Mumbai, Maharashtra 400097',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString10 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Viva Institute of Technology,Vasai, Mumbai</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">270</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">83</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912228714070">+912228714070</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow10 = new google.maps.InfoWindow({
+          content: contentString10
+        });
+
+       
+        marker10.addListener('click', function() {
+          infowindow10.open(map, marker10);
+        });
+    
+    marker10.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker10['title'];
+        });
+
+        // Marker 11
+
+        var marker11 = new google.maps.Marker({
+          position: pra,
+          map: map,
+          title: 'Prabodhan Blood Bank, no. 17, Siddharth Nagar Rd, Piramal Nagar, Goregaon West, Mumbai, Maharashtra 400104,',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString11 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Prabodhan Blood Bank, no. 17, Siddharth Nagar Rd, Piramal Nagar, Goregaon West, Mumbai, Maharashtra 400104,</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">733</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow11 = new google.maps.InfoWindow({
+          content: contentString11
+        });
+
+       
+        marker11.addListener('click', function() {
+          infowindow11.open(map, marker11);
+        });
+    
+    marker11.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker11['title'];
+        });
+
+        // Marker 12
+
+        var marker12 = new google.maps.Marker({
+          position: wes,
+          map: map,
+          title: 'West Coast Blood Bank & Blood Components, 748, Mori Rd, Mahim, Mumbai, Maharashtra 400016,',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString12 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>West Coast Blood Bank & Blood Components, 748, Mori Rd, Mahim, Mumbai, Maharashtra 400016</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">970</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow12 = new google.maps.InfoWindow({
+          content: contentString12
+        });
+
+       
+        marker12.addListener('click', function() {
+          infowindow12.open(map, marker12);
+        });
+    
+    marker12.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker12['title'];
+        });
+
+        // Marker 13
+
+        var marker13 = new google.maps.Marker({
+          position: pal,
+          map: map,
+          title: 'Pallavi Blood Bank, Madan Mohan malviya shatabdi hospital 2ndfloor, MBPT Colony, Best Colony, Govandi East, Mumbai, Maharashtra 400088',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString13 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strongPallavi Blood Bank, Madan Mohan malviya shatabdi hospital 2ndfloor, MBPT Colony, Best Colony, Govandi East, Mumbai, Maharashtra 400088</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">970</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+919653482996">+919653482996</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow13 = new google.maps.InfoWindow({
+          content: contentString13
+        });
+
+       
+        marker13.addListener('click', function() {
+          infowindow13.open(map, marker13);
+        });
+    
+    marker13.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker13['title'];
+        });
+
+        // Marker 14 
+
+        var marker14 = new google.maps.Marker({
+          position: mal,
+          map: map,
+          title: 'Malad Blood Bank, 2nd Floor, Bhavani Chambers, Off Rani Sati Marg, Kedarmal Road, Malad East, Mumbai Suburban, Mumbai, Maharashtra 400097',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString14 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Malad Blood Bank, 2nd Floor, Bhavani Chambers, Off Rani Sati Marg, Kedarmal Road, Malad East, Mumbai Suburban, Mumbai, Maharashtra 400097</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">730</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">35</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912228445678">+912228445678</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow14 = new google.maps.InfoWindow({
+          content: contentString14
+        });
+
+       
+        marker14.addListener('click', function() {
+          infowindow14.open(map, marker14);
+        });
+    
+    marker14.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker14['title'];
+        });
+
+        //  Marker 15
+
+        var marker15 = new google.maps.Marker({
+          position: har,
+          map: map,
+          title: 'Harkisandas Nurottamdas Hospital Blood Bank, Raja Rammohan Roy Rd, opposite Babubhai Jagjivandas, Prathna Samaj, Khetwadi, Girgaon, Mumbai, Maharashtra 400004',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString15 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Harkisandas Nurottamdas Hospital Blood Bank, Raja Rammohan Roy Rd, opposite Babubhai Jagjivandas, Prathna Samaj, Khetwadi, Girgaon, Mumbai, Maharashtra 400004</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">770</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow15 = new google.maps.InfoWindow({
+          content: contentString15
+        });
+
+       
+        marker15.addListener('click', function() {
+          infowindow15.open(map, marker15);
+        });
+    
+    marker15.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker15['title'];
+        });
+
+        // Marker 16
+
+        var marker16 = new google.maps.Marker({
+          position: bomb,
+          map: map,
+          title: 'Bombay Hospital Trust Blood Bank, Bombay hospital, Vitthaldas Thackersey Marg, A Ward, Zone 1, Churchgate, Mumbai, Maharashtra 400020',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString16 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Bombay Hospital Trust Blood Bank, Bombay hospital, Vitthaldas Thackersey Marg, A Ward, Zone 1, Churchgate, Mumbai, Maharashtra 400020</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">940</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">90</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912222067676">+912222067676</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow16 = new google.maps.InfoWindow({
+          content: contentString16
+        });
+
+       
+        marker16.addListener('click', function() {
+          infowindow16.open(map, marker16);
+        });
+    
+    marker16.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker16['title'];
+        });
+
+        // Marker 17
+
+        var marker17 = new google.maps.Marker({
+          position: sir,
+          map: map,
+          title: 'Sir J. J. Group Of Hospital Blood Bank, Byculla, Mumbai, Maharashtra 400008',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString17 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Sir J. J. Group Of Hospital Blood Bank, Byculla, Mumbai, Maharashtra 400008</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">280</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow17 = new google.maps.InfoWindow({
+          content: contentString17
+        });
+
+       
+        marker17.addListener('click', function() {
+          infowindow17.open(map, marker17);
+        });
+    
+    marker17.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker17['title'];
+        });
+
+        // Marker 18 
+
+        var marker18 = new google.maps.Marker({
+          position: san,
+          map: map,
+          title: 'Sanjeevani Blood Bank, 2nd Floor, Bhavani Chambers, Off Rani Sati Marg, Kedarmal Rd, Malad East, Mumbai, Maharashtra 400097',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString18 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Sanjeevani Blood Bank, 2nd Floor, Bhavani Chambers, Off Rani Sati Marg, Kedarmal Rd, Malad East, Mumbai, Maharashtra 400097</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">632</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">83</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow18 = new google.maps.InfoWindow({
+          content: contentString18
+        });
+
+       
+        marker18.addListener('click', function() {
+          infowindow18.open(map, marker18);
+        });
+    
+    marker18.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker18['title'];
+        });
+
+        // Marker 19
+
+        var marker19 = new google.maps.Marker({
+          position: blo,
+          map: map,
+          title: 'Blood Bank KEM, 30, Parmar Guruji Marg, Parel, Mumbai, Maharashtra 400012',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString19 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Blood Bank KEM, 30, Parmar Guruji Marg, Parel, Mumbai, Maharashtra 400012</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">6230</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow19 = new google.maps.InfoWindow({
+          content: contentString19
+        });
+
+       
+        marker19.addListener('click', function() {
+          infowindow19.open(map, marker19);
+        });
+    
+    marker19.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker19['title'];
+        });
+
+        // Marker 20
+
+        var marker20= new google.maps.Marker({
+          position: mee,
+          map: map,
+          title: 'Meenatai Thackeray Blood Bank, Community Welfare Centre, CTS No. 899/C, First Floor Sitaram Patkar Marg, Off Aarey Road Village, Pahadi Rd, Goregaon West, Mumbai, Maharashtra 400104',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString20 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Meenatai Thackeray Blood Bank, Community Welfare Centre, CTS No. 899/C, First Floor Sitaram Patkar Marg, Off Aarey Road Village, Pahadi Rd, Goregaon West, Mumbai, Maharashtra 400104</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">340</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">23</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow20 = new google.maps.InfoWindow({
+          content: contentString20
+        });
+
+       
+        marker20.addListener('click', function() {
+          infowindow20.open(map, marker20);
+        });
+    
+    marker20.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker20['title'];
+        });
+
+        // Marker 21
+
+        var marker21 = new google.maps.Marker({
+          position: mah,
+          map: map,
+          title: 'Mahatma Gandhi Seva Mandir Blood Bank, 2nd Floor, Mahatma Gandhi Sevamandir, Swami Vivekananda Rd, opposite Bandra Lake, Bandra West, Mumbai, Maharashtra 400050',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString21 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Mahatma Gandhi Seva Mandir Blood Bank, 2nd Floor, Mahatma Gandhi Sevamandir, Swami Vivekananda Rd, opposite Bandra Lake, Bandra West, Mumbai, Maharashtra 400050</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">4000</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+919820526618">+919820526618</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow21 = new google.maps.InfoWindow({
+          content: contentString21
+        });
+
+       
+        marker21.addListener('click', function() {
+          infowindow21.open(map, marker21);
+        });
+    
+    marker21.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker21['title'];
+        });
+
+        // Marker 22
+
+        var marker22= new google.maps.Marker({
+          position: sub,
+          map: map,
+          title: 'Suburban Hi Tech Blood Bank, No. 11, Sir Jamshedji Jeejeebhoy Rd, Ajmer, Byculla, Mumbai, Maharashtra 400027.',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString22 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Suburban Hi Tech Blood Bank, No. 11, Sir Jamshedji Jeejeebhoy Rd, Ajmer, Byculla, Mumbai, Maharashtra 400027</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">678</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">45</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow22 = new google.maps.InfoWindow({
+          content: contentString22
+        });
+
+       
+        marker22.addListener('click', function() {
+          infowindow22.open(map, marker22);
+        });
+    
+    marker22.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker22['title'];
+        });
+
+        // Marker 23
+
+        var marker23= new google.maps.Marker({
+          position: barc,
+          map: map,
+          title: 'BARC Hospital Blood Bank, Anushakti Colony, Anushakti Nagar, Mumbai, Maharashtra 400085',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString23 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>BARC Hospital Blood Bank, Anushakti Colony, Anushakti Nagar, Mumbai, Maharashtra 400085</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">347</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">45</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow23 = new google.maps.InfoWindow({
+          content: contentString23
+        });
+
+       
+        marker23.addListener('click', function() {
+          infowindow23.open(map, marker23);
+        });
+    
+    marker23.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker23['title'];
+        });
+
+        //  Marker 24
+
+        var marker24= new google.maps.Marker({
+          position: sirj,
+          map: map,
+          title: 'Sir J J Mahanagar Raktapedhi, Gate no 11,near jj marg police station, Mohammed Ali Rd, Byculla, Mumbai, Maharashtra 400008',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString24 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Sir J J Mahanagar Raktapedhi, Gate no 11,near jj marg police station, Mohammed Ali Rd, Byculla, Mumbai, Maharashtra 400008</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">353</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">90</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow24 = new google.maps.InfoWindow({
+          content: contentString24
+        });
+
+       
+        marker24.addListener('click', function() {
+          infowindow24.open(map, marker24);
+        });
+    
+    marker24.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker24['title'];
+        });
+
+        // Marker 25
+
+        var marker25= new google.maps.Marker({
+          position: nair,
+          map: map,
+          title: 'Nair Hospital Blood Bank (2nd Floor Opd Building), RTO Colony, Mumbai Central, Mumbai, Maharashtra 400008',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString25 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Nair Hospital Blood Bank (2nd Floor Opd Building), RTO Colony, Mumbai Central, Mumbai, Maharashtra 400008</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">890</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow25 = new google.maps.InfoWindow({
+          content: contentString25
+        });
+
+       
+        marker25.addListener('click', function() {
+          infowindow25.open(map, marker25);
+        });
+    
+    marker25.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker25['title'];
+        });
+
+        //  marker 26
+
+        var marker26= new google.maps.Marker({
+          position: glo,
+          map: map,
+          title: 'Global Hospital Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString26 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Global Hospital Blood Bank, Parel East, Parel, Mumbai, Maharashtra 400012</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">560</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">5</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912267670101">+912267670101</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow26 = new google.maps.InfoWindow({
+          content: contentString26
+        });
+
+       
+        marker26.addListener('click', function() {
+          infowindow26.open(map, marker26);
+        });
+    
+    marker26.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker26['title'];
+        });
+
+        // Marker 27
+
+        var marker27= new google.maps.Marker({
+          position: tata,
+          map: map,
+          title: 'Tata Memorial Hospital Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString27 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Tata Memorial Hospital Blood Bank, Dr Ernest Borges Rd, Parel East, Parel, Mumbai, Maharashtra 400012</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">50</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912224177000">+912224177000</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow27 = new google.maps.InfoWindow({
+          content: contentString27
+        });
+
+       
+        marker27.addListener('click', function() {
+          infowindow27.open(map, marker27);
+        });
+    
+    marker27.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker27['title'];
+        });
+
+        // Marker 28 
+
+        var marker28= new google.maps.Marker({
+          position: rot,
+          map: map,
+          title: 'Rotary Dg Goenkar Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString28 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Rotary Dg Goenkar Blood Bank, Opposite Railway Station, Bses Mg Hospital, Swami Vivekananda Rd, Andheri West, Mumbai, Maharashtra 400058</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">2500</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">56</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912226283557">+912226283557</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow28 = new google.maps.InfoWindow({
+          content: contentString28
+        });
+
+       
+        marker28.addListener('click', function() {
+          infowindow28.open(map, marker28);
+        });
+    
+    marker28.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker28['title'];
+        });
+
+        //  Marker 29 
+
+        var marker29= new google.maps.Marker({
+          position: byl,
+          map: map,
+          title: 'B. Y. L. Nair Hospital Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString29 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>B. Y. L. Nair Hospital Blood Bank, Dr Anandrao Nair Marg, RTO Colony, Mumbai Central, Mumbai, Maharashtra 400008, </strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">36</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912223027644">+912223027644</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow29 = new google.maps.InfoWindow({
+          content: contentString29
+        });
+
+       
+        marker29.addListener('click', function() {
+          infowindow29.open(map, marker29);
+        });
+    
+    marker29.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker29['title'];
+        });
+
+        // Marker 30 
+
+        var marker30= new google.maps.Marker({
+          position: lila,
+          map: map,
+          title: 'Lilavati Hospital And Research Centre Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString30 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Lilavati Hospital And Research Centre Blood Bank, A 791, Bandra Reclamation Rd, Mount Mary, Bandra West, Mumbai, Maharashtra 400050, </strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">347</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">4</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912226751000">+912226751000</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow30 = new google.maps.InfoWindow({
+          content: contentString30
+        });
+
+       
+        marker30.addListener('click', function() {
+          infowindow30.open(map, marker30);
+        });
+    
+    marker30.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker30['title'];
+        });
+
+        // Marker 31
+
+        var marker31= new google.maps.Marker({
+          position: kj,
+          map: map,
+          title: 'K. J. Somaiya Medical College And Hospital Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString31 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>K. J. Somaiya Medical College And Hospital Blood Bank, Eastern Express Hwy, Sion, Mumbai, Maharashtra 400022</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">354</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912224024671">+912224024671</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow31 = new google.maps.InfoWindow({
+          content: contentString31
+        });
+
+       
+        marker31.addListener('click', function() {
+          infowindow31.open(map, marker31);
+        });
+    
+    marker31.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker31['title'];
+        });
+
+        // marker 32
+
+        var marker32= new google.maps.Marker({
+          position: sev,
+          map: map,
+          title: 'Seven Hills Health Care Private Limited Hospital Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString32 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Seven Hills Health Care Private Limited Hospital Blood Bank, Marol Maroshi Rd, Bhavani Nagar, Marol, Andheri East, Mumbai, Maharashtra 400059, </strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">745</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">67</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912267676719">+912267676719</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow32 = new google.maps.InfoWindow({
+          content: contentString32
+        });
+
+       
+        marker32.addListener('click', function() {
+          infowindow32.open(map, marker32);
+        });
+    
+    marker32.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker32['title'];
+        });
+
+        // Marker 33 
+
+        var marker33= new google.maps.Marker({
+          position: blo,
+          map: map,
+          title: 'Bloodline Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString33 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Bloodline Blood Bank, C/o Swargiya Dharmvir Anand Dighe Saheb Sankul, Khopat, Dr Ambedkar Rd, Thane West, Thane, Maharashtra 400601</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">60</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912225375000">+912225375000</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow33 = new google.maps.InfoWindow({
+          content: contentString33
+        });
+
+       
+        marker33.addListener('click', function() {
+          infowindow33.open(map, marker33);
+        });
+    
+    marker33.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker33['title'];
+        });
+
+        // Marker 34 
+
+        var marker34 = new google.maps.Marker({
+          position: kap,
+          map: map,
+          title: 'Kapoorben Vasanji Lathiya Blood Bank - Nanavati Hospital',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString34 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Kapoorben Vasanji Lathiya Blood Bank - Nanavati Hospital, Swami Vivekananda Rd, Momin Nagar, Vile Parle West, Mumbai, Maharashtra 400056</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">345</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">30</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912226119924">+912226119924</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow34 = new google.maps.InfoWindow({
+          content: contentString34
+        });
+
+       
+        marker34.addListener('click', function() {
+          infowindow34.open(map, marker34);
+        });
+    
+    marker34.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker34['title'];
+        });
+
+        //  Marker 35 
+
+        var marker35= new google.maps.Marker({
+          position: vaidya,
+          map: map,
+          title: 'Vaidya Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString35 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Vaidya Blood Bank, 1st Floor,Jeevan Jyot Hospital Mahatma Gandhi Road Naupada, Thane West, Near to, Naupada, Police Station, Thane, Maharashtra 400602</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">600</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">600</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912225380787">+912225380787</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow35 = new google.maps.InfoWindow({
+          content: contentString35
+        });
+
+       
+        marker35.addListener('click', function() {
+          infowindow35.open(map, marker35);
+        });
+    
+    marker35.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker35['title'];
+        });
+
+         //  Marker 36 
+
+         var marker36= new google.maps.Marker({
+          position: esic,
+          map: map,
+          title: 'ESIC Model Hospital Cum Odc Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString36 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>ESIC Model Hospital Cum Odc Blood Bank, Sher E Punjab Colony, Andheri East, Mumbai, Maharashtra 400093</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">645</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912228321361">+912228321361</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow36 = new google.maps.InfoWindow({
+          content: contentString36
+        });
+
+       
+        marker36.addListener('click', function() {
+          infowindow36.open(map, marker36);
+        });
+    
+    marker36.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker36['title'];
+        });
+
+         //  Marker 37 
+
+         var marker37= new google.maps.Marker({
+          position: vn,
+          map: map,
+          title: 'V. N. Desai Municipal General Hospital Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString37 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>V. N. Desai Municipal General Hospital Blood Bank, New Indian Society Rd, Shivkunj, Vithal Nagar, Santacruz East, Mumbai, Maharashtra 400055, </strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">65</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">6</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912226182081">+912226182081</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow37 = new google.maps.InfoWindow({
+          content: contentString37
+        });
+
+       
+        marker37.addListener('click', function() {
+          infowindow37.open(map, marker37);
+        });
+    
+    marker37.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker37['title'];
+        });
+
+         //  Marker 38 
+
+         var marker38= new google.maps.Marker({
+          position: navj,
+          map: map,
+          title: 'Navjivan Blood Bank and Lab (Thane)',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString38 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Navjivan Blood Bank and Lab (Thane), Prakash Bhuvan, Gokhale Rd, Next to Cosmos Bank, Naupada, Thane West, Thane, Maharashtra 400602</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">70</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912225371000">+912225371000</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow38 = new google.maps.InfoWindow({
+          content: contentString38
+        });
+
+       
+        marker38.addListener('click', function() {
+          infowindow38.open(map, marker38);
+        });
+    
+    marker38.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker38['title'];
+        });
+
+         //  Marker 39 
+
+         var marker39= new google.maps.Marker({
+          position: drrn,
+          map: map,
+          title: 'Dr. R. N. Cooper General Hospital Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString39 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Dr. R. N. Cooper General Hospital Blood Bank, Navpada, Kamala Nagar, Vile Parle West, Mumbai, Maharashtra 400056</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">609</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">40</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912226242609"+912226242609</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow39 = new google.maps.InfoWindow({
+          content: contentString39
+        });
+
+       
+        marker39.addListener('click', function() {
+          infowindow39.open(map, marker35);
+        });
+    
+    marker39.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker39['title'];
+        });
+
+         //  Marker 40 
+
+         var marker40= new google.maps.Marker({
+          position: tri,
+          map: map,
+          title: 'Triumph Blood Bank',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString40 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Triumph Blood Bank, 216, 2nd Floor, Oron Business Park, Kapur Bawdi, Thane West, next to Wonder Mall, Thane, Maharashtra 400607</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">290</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912225840086">+912225840086</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow40 = new google.maps.InfoWindow({
+          content: contentString40
+        });
+
+       
+        marker40.addListener('click', function() {
+          infowindow40.open(map, marker40);
+        });
+    
+    marker40.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker40['title'];
+        });
+        //====================================================================================================================================//
+      }
+
+
+</script>
+
+
+   
+
+
+
+    <!-- Footer -->
+    <br><br><br><br>
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="color:white">© 2020 Copyright:
+      <a href="#"> virusbaba.com</a>
+    </div>
+    <!-- Copyright -->
+
+
+    <!-- Footer -->
+    <p translate="yes" style="font-family:montserrat;color:white;" align="center">Application Developed by: Nilesh Ohol.</p>
+    {% endblock %}
+    
+  </body>
+
+</html>

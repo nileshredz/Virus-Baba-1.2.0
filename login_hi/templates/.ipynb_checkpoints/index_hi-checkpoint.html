@@ -1,0 +1,232 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Login in Virus Baba</title>
+
+  </head>
+
+  <body>
+    {% block content %}
+    {%if messghi %}
+    <script>
+      alert('{{ messghi }}');
+
+    </script>
+    {% endif %}
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent;">
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'logo.png' %}" width="40%" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="background-color:#D0D3D4;"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" style="color:white">घर <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticAbout">के बारे में</a>
+          </li>
+          <!--Modal for About-->
+          <div class="modal fade" id="staticAbout" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">के बारे में:</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img src={% static 'logob.png' %} />
+                  <p style="color:black;">वायरस बाबा एक एप्लीकेशन है जो असंभव को 1.3 बिलियन भारतीयों का परीक्षण करने में सक्षम बनाता है। यह एप्लिकेशन आसानी से COVID-19 के सामाजिक भेद और परीक्षण को बढ़ावा देता है। प्रश्नावली के आधार पर आप इसका उत्तर देते हैं कि आपको COVID-19 का अतिसंवेदनशील स्कोर प्राप्त करने में मदद करता है और आपको अपने निकटतम परीक्षा केंद्रों में नियुक्ति बुक करने में मदद करता है। </p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">समझ लिय</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticContact">संपर्क करें</a>
+          </li>
+          <!--Modal for Contact-->
+          <div class="modal fade" id="staticContact" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">संपर्क करें:</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img src={% static 'logob.png' %} />
+                  <p style="color:black;" align="center">द्वारा विकसित अनुप्रयोग: नीलेश .डी.ओहोल </p>
+                  <p style="color:black;">Email ID: <a href="">nileshohol@live.in</a></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">समझ लिय</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="/stat/" style="color:white" >आंकड़े</a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#alert">दान</a>
+          </li>
+            <!--Modal for Donation-->
+            <div class="modal fade" id="alert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">दान/संगरोध के साथ समर्थन की आवश्यकता है:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        इन सेवाओं तक पहुँचने के लिए कृपया साइनअप करें/लॉग इन करें
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">समझ लिया</button>
+      </div>
+    </div>
+  </div>
+</div>
+             <li class="nav-item">
+            <a class="nav-link" href="#" style="color:white"  data-toggle="modal" data-target="#alert">संगरोध के साथ समर्थन की आवश्यकता है</a>
+          </li>
+        </ul>
+      </div>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <a type="button" data-toggle="modal" data-target="#staticLogin" style="font-family:montserrat;color:white;">लॉग इन/साइन अप</a>
+      </div>
+    </nav>
+    <!--Modal for Login-->
+    <div class="modal fade" id="staticLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalScrollableTitle">लॉग इन:</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form class ="was-validated" action='/hi/profile/'  method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                <label for="exampleInputEmail1">ईमेल पत</label>
+                <input type="email" class="form-control" id="emailLogin_hi" name="emailLogin" aria-describedby="emailHelp" required>
+                <small id="emailHelp" class="form-text text-muted">हम आपके ईमेल को कभी भी किसी और के साथ साझा नहीं करेंगे।</small>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">पासवर्ड</label>
+                <input type="password" class="form-control" id="passLogin" name="passLogin" required>
+              </div>
+
+              <button type="submit" class="btn btn-primary">लॉग इन</button>
+              <br>
+              <br>
+
+              <p style="color:black;"> यदि आपके पास खाता नहीं है तो साइनअप पर क्लिक करें.</p>
+              
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">बंद करे</button>
+            <a type="button" href="http://127.0.0.1:8000/hi/signup/" style="color:white;" class="btn btn-primary">साइन अप करें</a>
+
+          </div>
+        </div>
+      </div>
+      </div>
+      
+      <br><br><br>
+      <div class="dropdown" align="right">
+        <button class="btn btn-secondary dropdown-toggle" type="button" style="background-color:transparent;" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          भाषा:
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <a href="http://127.0.0.1:8000/" class="dropdown-item" type="button">English</a>
+          <button class="dropdown-item" type="button">हिन्दी</button>
+          <a href="http://127.0.0.1:8000/mr/" class="dropdown-item" type="button">मराठी</a>
+          <a class="dropdown-item" type="button" href="http://127.0.0.1:8000/kn">ಕನ್ನಡ</a>
+        </div>
+      </div>
+
+
+
+      <h1 class="text-center" style="font-family:montserrat;color:white">आइये बनाते हैं भारत को फिर से महान</h1>
+      <br><br>
+
+
+
+
+      <br><br><br>
+      <div class="container" align="center">
+        <div class="row">
+          <div class="col">
+            <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{% static 'stocks.jpeg' %}" alt="Card image cap">
+              <div class="card-body" align="middle">
+                <h5 class="card-title">हमें हमारी अर्थव्यवस्था पुनर्प्राप्त करें</h5>
+                <p class="card-text" style="color:black;">COVID-19 ने अर्थव्यवस्था को बहुत मुश्किल से मारा है, आइए इसे फिर से उचित बनाएं।</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card" style="width: 18rem;height:22.8rem;">
+              <img class="card-img-top" src="{% static 'wash_hand.jpeg' %}" alt="Card image cap">
+              <div class="card-body" align="middle">
+                <h5 class="card-title">अपने हाथ धोते रहें</h5>
+                <p class="card-text" style="color:black;">20 सेकंड के लिए साबुन या तरल साबुन के साथ अपने हाथ धो लें या अपने हाथ को साफ करें ।</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <div class="alert alert-primary" role="alert" align='center'>
+        भारत में COVID-19 मामलों की पुष्टि की: 2.7 Cr
++2,22,000
+      </div>
+      <div class="alert alert-success" role="alert" align='center'>
+        बरामद मामले:  2.37 Cr +3,03,000
+      </div>
+      <div class="alert alert-danger" role="alert" align='center'>
+        मृतकों की संख्या:  3,04,000
++4,454
+      </div>
+
+
+
+      <!-- Footer -->
+      <br><br><br><br>
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3" style="color:white">© 2020 Copyright:
+        <a href="#"> virusbaba.com</a>
+      </div>
+      <!-- Copyright -->
+
+
+      <!-- Footer -->
+      <p translate="yes" style="font-family:montserrat;color:white;" align="center">Application Developed by: Nilesh Ohol.</p>
+      {% endblock %}
+  </body>
+
+</html>

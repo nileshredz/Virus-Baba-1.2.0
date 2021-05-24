@@ -1,0 +1,261 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Login in Virus Baba</title>
+    
+  <link href="https://fonts.googleapis.com/css?family=Ropa+Sans" rel="stylesheet">
+    <!--Style for the QR-->
+      <style>
+    body {
+      font-family: 'Ropa Sans', sans-serif;
+      color: #333;
+      max-width: 640px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    h1 {
+      margin: 10px 0;
+      font-size: 40px;
+    }
+
+    #loadingMessage {
+      text-align: center;
+      padding: 40px;
+      background-color: #eee;
+    }
+
+    #canvas {
+      width: 100%;
+        
+    }
+
+    #output {
+      margin-top: 20px;
+      background: #eee;
+      padding: 10px;
+      padding-bottom: 0;
+    }
+
+    #output div {
+      padding-bottom: 10px;
+      word-wrap: break-word;
+    }
+
+    #noQRFound {
+      text-align: center;
+    }
+  </style>
+  </head>
+
+  <body>
+    {% block content %}
+
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent;">
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'logo.png' %}" width="40%" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="background-color:#D0D3D4;"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" style="color:white">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticAbout">About</a>
+          </li>
+          <!--Modal for About-->
+          <div class="modal fade" id="staticAbout" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">About:</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img src={% static 'logob.png' %} />
+                  <p style="color:black;">Virus Baba is an Application which Enables the Impossible to Test 1.3 Billion Indians possible. This application Promotes Social Distancing and Testin of COVID-19 with ease. Depending upon the Questionnaires you Answer it Suggests you Susceptible Score of COVID-19 and Helps you book an Appointment in your Nearest Test Centres. </p>
+                </div>
+                <div class="modal-footer">
+                 <button type="button" class="btn btn-primary" data-dismiss="modal">Understood</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticContact">Contact</a>
+          </li>
+          <!--Modal for Contact-->
+          <div class="modal fade" id="staticContact" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Contact:</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img src={% static 'logob.png' %} />
+                  <p style="color:black;" align="center">Application Developed by: Nilesh .D. Ohol </p>
+                  <p style="color:black;">Email ID: <a href="">nileshohol@live.in</a></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Understood</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="/stat/" style="color:white" >Statistics</a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#alert">Donation</a>
+          </li>
+            <!--Modal for Donation-->
+            <div class="modal fade" id="alert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Donation/Need Support with Quarantine:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        To Access these Services please SignUp/Login
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
+             <li class="nav-item">
+            <a class="nav-link" href="#" style="color:white"  data-toggle="modal" data-target="#alert">Need Support with Quarantine</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/qr/" style="color:white" >QR Code Reader</a>
+          </li>
+           
+        </ul>
+      </div>
+      <br><div class="logout">
+    <button type="button" class="btn btn-dark" style="background:transparent;font-family:montserrat;" onClick="location.href='{% url 'log'%}'">Logout</button>
+
+    </div>
+      </nav>
+    <br>
+<a class="weatherwidget-io" href="https://forecast7.com/en/20d5978d96/india/" data-label_1="INDIA" data-label_2="WEATHER" data-font="Open Sans" data-icons="Climacons Animated" data-textcolor="#ffffff" >INDIA WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script> 
+      
+    <!--QR Code working starts here-->
+      <script src="{% static 'jsQR.js' %}"></script>
+      <h1 class="text-center" style="font-family:montserrat;color:white">QR Code Reader for Doctors</h1>
+  <p class="text-center">For Ofiicial Use only</p>
+      <div style="text-align:center;">
+  <div id="loadingMessage" style="color:white;">🎥 Unable to access video stream (please make sure you have a webcam enabled)</div>
+  <canvas id="canvas" style="max-width:90%;" hidden></canvas>
+      </div>
+  <div id="output" hidden>
+    <div id="outputMessage" class="text-center" style="color:white;">No QR code detected.</div>
+    <div  class="text-center"  hidden><b style="color:white;">Data:</b> <span id="outputData" style="color:white;"></span></div>
+  </div>
+  <h3 class="text-center" style="color:white;" id="data1"  name="data">User Id Below</h3>   
+  <h3 class="text-center" style="color:white;background-color:green;" placeholder="Your QR COde will be shown Here" id="data" name="data"></h3>
+  
+   
+  
+  <script>
+    var video = document.createElement("video");
+    var canvasElement = document.getElementById("canvas");
+    var canvas = canvasElement.getContext("2d");
+    var loadingMessage = document.getElementById("loadingMessage");
+    var outputContainer = document.getElementById("output");
+    var outputMessage = document.getElementById("outputMessage");
+    var outputData = document.getElementById("outputData");
+    var data = document.getElementById("data");
+
+    function drawLine(begin, end, color) {
+      canvas.beginPath();
+      canvas.moveTo(begin.x, begin.y);
+      canvas.lineTo(end.x, end.y);
+      canvas.lineWidth = 4;
+      canvas.strokeStyle = color;
+      canvas.stroke();
+    }
+
+    // Use facingMode: environment to attemt to get the front camera on phones
+    navigator.mediaDevices.getUserMedia({ video: { facingMode: "environment" } }).then(function(stream) {
+      video.srcObject = stream;
+      video.setAttribute("playsinline", true); // required to tell iOS safari we don't want fullscreen
+      video.play();
+      requestAnimationFrame(tick);
+    });
+
+    function tick() {
+      loadingMessage.innerText = "⌛ Loading video..."
+      if (video.readyState === video.HAVE_ENOUGH_DATA) {
+        loadingMessage.hidden = true;
+        canvasElement.hidden = false;
+        outputContainer.hidden = false;
+
+        canvasElement.height = video.videoHeight;
+        canvasElement.width = video.videoWidth;
+        canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
+        var imageData = canvas.getImageData(0, 0, canvasElement.width, canvasElement.height);
+        var code = jsQR(imageData.data, imageData.width, imageData.height, {
+          inversionAttempts: "dontInvert",
+        });
+        if (code) {
+          drawLine(code.location.topLeftCorner, code.location.topRightCorner, "#FF3B58");
+          drawLine(code.location.topRightCorner, code.location.bottomRightCorner, "#FF3B58");
+          drawLine(code.location.bottomRightCorner, code.location.bottomLeftCorner, "#FF3B58");
+          drawLine(code.location.bottomLeftCorner, code.location.topLeftCorner, "#FF3B58");
+          outputMessage.hidden = true;
+          outputData.parentElement.hidden = false;
+          outputData.innerText = code.data;
+          data.hidden = false;
+          data1.hidden = false;
+          data.innerHTML = code.data;
+            
+        } else {
+          outputMessage.hidden = false;
+          outputData.parentElement.hidden = true;
+          data1.hidden = true;
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+  </script>
+    
+
+
+    <!-- Footer -->
+    <br><br><br><br>
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="color:white">© 2020 Copyright:
+      <a href="#"> virusbaba.com</a>
+    </div>
+    <!-- Copyright -->
+
+
+    <!-- Footer -->
+    <p translate="yes" style="font-family:montserrat;color:white;" align="center">Application Developed by: Nilesh Ohol.</p>
+    {% endblock %}
+    
+  </body>
+
+</html>

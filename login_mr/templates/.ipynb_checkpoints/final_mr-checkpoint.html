@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<head>
+
+</head>
+<body>
+{%block content%}
+    <div class="logout">
+    <button type="button" class="btn btn-dark" style="background:transparent;font-family:montserrat; position: absolute;right: 100px;top: 50px;" onClick="location.href='{% url 'log_mr' %}'">बाहेर पडणे</button>
+
+    </div>
+<br><br><br><br><br><br><br>
+<div class="card text-white bg-success mb-3" style="width:60rem;margin-left:auto;margin-right:auto;">
+  <div class="card-header" style="font-family:montserrat;font-size:35px;">नोंदणी यशस्वी</div>
+  <div class="card-body">
+    <h5 class="card-title">COVID_19 विरूद्ध लढा देण्यासाठी आपल्या मोलाच्या योगदानाबद्दल धन्यवाद.</h5>
+    <h5>आपल्याला नोंदणी आणि क्यूआर कोडसह एक ई-मेल आणि एसएमएस प्राप्त होईल आम्ही आपल्या योगदानास अत्यंत बंधनकारक आहोत.</h5>
+    <p>ईमेल आणि एसएमएस प्राप्त केल्यानंतर काय करावे?</p>
+    <p>चरण 1: दिलेल्या तारखेला आणि वेळेत चाचणी केंद्रात उपस्थित रहा.</p>
+    <p>चरण 2: कोविड -१ 19 च्या अधिका the्यांना क्यूआर कोड किंवा आयडी द्या.</p>
+    <p>चरण 3: धीर धरा, आपल्याला एसएमएस / ईमेलद्वारे अहवाल प्राप्त होईल.</p>
+  </div>
+    <div class="modal-footer">
+        <p style="float:left;">जर आपल्याला अलग ठेवण्याच्या सहाय्याने मदत हवी असेल तर क्लिक करा:</p>
+        <a type="button" href="/profile/quarantine/" class="btn btn-primary" data-dismiss="modal">अलग ठेवणे साठी बुकिंग</a> 
+      </div>
+</div>
+
+   
+{%endblock%}
+</body>

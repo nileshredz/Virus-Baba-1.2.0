@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>लॉगिन</title>
+
+</head>
+<body>
+{% block content %}
+    
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent;">
+        <a class="navbar-brand" href="#">
+    <img src="{% static 'logo.png' %}" width="40%"  alt=""></a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="background-color:#D0D3D4;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" style="color:white">घर <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticAbout" >के बारे में</a>
+                </li>
+                <!--Modal for About-->
+                <div class="modal fade" id="staticAbout" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">के बारे में:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src={% static 'logob.png' %} />
+        <p style="color:black;">वायरस बाबा एक एप्लीकेशन है जो असंभव को 1.3 बिलियन भारतीयों का परीक्षण करने में सक्षम बनाता है। यह एप्लिकेशन आसानी से COVID-19 के सामाजिक भेद और परीक्षण को बढ़ावा देता है। प्रश्नावली के आधार पर आप इसका उत्तर देते हैं कि आपको COVID-19 का अतिसंवेदनशील स्कोर प्राप्त करने में मदद करता है और आपको अपने निकटतम परीक्षा केंद्रों में नियुक्ति बुक करने में मदद करता है। </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">समझ लिय</button>
+      </div>
+    </div>
+  </div>
+</div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticContact">संपर्क करें</a>
+                </li>
+                <!--Modal for Contact-->
+                <div class="modal fade" id="staticContact" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">संपर्क करें:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src={% static 'logob.png' %} />
+        <p style="color:black;" align="center">द्वारा विकसित अनुप्रयोग: नीलेश .डी.ओहोल </p>
+        <p style="color:black;">Email ID: <a href="">nileshohol@live.in</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">समझ लिय</button>
+      </div>
+    </div>
+  </div>
+</div>
+                 <li class="nav-item">
+            <a class="nav-link" href="/stat/" style="color:white" >आंकड़े</a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#alert">दान</a>
+          </li>
+            <!--Modal for Donation-->
+            <div class="modal fade" id="alert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">दान/संगरोध के साथ समर्थन की आवश्यकता है:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        इन सेवाओं तक पहुँचने के लिए कृपया साइनअप करें/लॉग इन करें
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">समझ लिया</button>
+      </div>
+    </div>
+  </div>
+</div>
+             <li class="nav-item">
+            <a class="nav-link" href="#" style="color:white"  data-toggle="modal" data-target="#alert">संगरोध के साथ समर्थन की आवश्यकता है</a>
+          </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <!--Login In Starts Here-->
+   
+    <br>
+    <h1 style="color:white;font-family:montserrat;" align="center">साइन अप करें:</h1>
+    <br>
+    <br>
+<div class="card bg-light mb-3" style="max-width:90%;margin-left:auto;margin-right:auto;">
+  <div class="card-header">साइन अप करें:</div>
+  <div class="card-body">
+    <h5 class="card-title">आप सामान्य जानकारी दर्ज करें:</h5>
+    <form class='was-validated' method="post" action="http://127.0.0.1:8000/hi/profiles/">
+        {% csrf_token %}
+        <div class="form-group">
+    <label >नाम:</label>
+    <input type="text" name="name1" class="form-control" required>
+  </div>
+    <div class="form-group">
+    <label >आयु:</label>
+    <input type="text" name="age1" class="form-control" required>
+  </div>
+    <div class="form-group col-md-4">
+      <label for="inputState">
+लिंग:</label>
+      <select id="inputState" class="form-control" name="gender1" required>
+        <option selected value="">Choose...</option>
+        <option>पुरुष</option>
+        <option>महिला</option>
+        <option>अन्य</option>
+      </select>
+    </div> 
+  <div class="form-group">
+    <label >फ़ोन:</label>
+    <input type="tel" name="phone1" class="form-control" required>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">ईमेल पता</label>
+    <input type="email" name="email1" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
+    <small id="emailHelp" class="form-text text-muted">हम आपके ईमेल को कभी भी किसी और के साथ साझा नहीं करेंगे.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">पासवर्ड</label>
+    <input type="password" name="pass1" class="form-control" id="exampleInputPassword1" required>
+  </div>
+   <div class="form-group">
+    <label >पासवर्ड की पुष्टि कीजिये:</label>
+    <input type="password" name="cpass1" class="form-control" required>
+  </div>
+  <button type="submit" class="btn btn-primary">प्रस्तुत</button>
+</form>
+  </div>
+</div>
+
+
+
+    <br><br><br><br><br><br><br>
+    
+    <div class="footer-copyright text-center py-3" style="color:white">© 2020 Copyright:
+        <a href="#"> virusbaba.com</a>
+    </div>
+    <!-- Copyright -->
+
+
+    <!-- Footer -->
+    <p translate="yes" style="font-family:montserrat;color:white;" align="center">Application Developed by: Nilesh
+        Ohol.</p>
+
+
+
+
+{% endblock %}
+<br>
+</body>
+</html>

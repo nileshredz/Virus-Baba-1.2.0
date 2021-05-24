@@ -1,0 +1,1384 @@
+{% extends 'base.html' %}
+{% load static%}
+
+
+<body>
+{% block content %}
+    
+    
+    
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent;">
+        <a class="navbar-brand" href="#">
+    <img src="{% static 'logo.png' %}" width="40%"  alt=""></a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="background-color:#D0D3D4;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" style="color:white">घर <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticAbout" >के बारे में</a>
+                </li>
+                <!--Modal for About-->
+                <div class="modal fade" id="staticAbout" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">के बारे में:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src={% static 'logob.png' %} />
+        <p style="color:black;">वायरस बाबा एक एप्लीकेशन है जो असंभव को 1.3 बिलियन भारतीयों का परीक्षण करने में सक्षम बनाता है। यह एप्लिकेशन आसानी से COVID-19 के सामाजिक भेद और परीक्षण को बढ़ावा देता है। प्रश्नावली के आधार पर आप इसका उत्तर देते हैं कि आपको COVID-19 का अतिसंवेदनशील स्कोर प्राप्त करने में मदद करता है और आपको अपने निकटतम परीक्षा केंद्रों में नियुक्ति बुक करने में मदद करता है। </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">समझ लिय</button>
+      </div>
+    </div>
+  </div>
+</div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticContact">संपर्क करें</a>
+                </li>
+                <!--Modal for Contact-->
+                <div class="modal fade" id="staticContact" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">संपर्क करें:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src={% static 'logob.png' %} />
+        <p style="color:black;" align="center">द्वारा विकसित अनुप्रयोग: नीलेश .डी.ओहोल </p>
+        <p style="color:black">Email ID: <a href="">nileshohol@live.in</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">समझ लिय</button>
+      </div>
+    </div>
+  </div>
+</div>
+               <li class="nav-item">
+            <a class="nav-link" href="/hi/profile/stat/" style="color:white" >आंकड़े</a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href = "/hi/profile/charity/" style="color:white" >दान</a>
+          </li>
+            
+             <li class="nav-item">
+            <a class="nav-link"href = "/hi/profile/quarantine/" style="color:white" >संगरोध के साथ समर्थन की आवश्यकता है</a>
+          </li>
+                <li class="nav-item">
+            <a class="nav-link" href="/profile/hospital/" style="color:white" >अस्पताल की सेवा</a>
+          </li>
+            </ul> </div> <br><div class="logout">
+    <button type="button" class="btn btn-dark" style="background:transparent;font-family:montserrat;" onClick="location.href='{% url 'log_hi' %}'">लॉग आउट</button>
+
+    </div>
+    </nav>
+    <br>
+        <br>
+        <h1 class="text-center" style="font-family:montserrat;color:white">VirusBaba में आपका स्वागत है</h1>
+        <br>
+        <br>
+
+        
+
+        <br>
+
+
+      <!-- Modal for the Drugstore -->  
+<div class="modal fade" id="medicalModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> मेडिकल स्टोर</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <div class="hotel-search">
+      <div id="findhotels" style="font-family:montserrat">
+        स्थान दर्ज करें: <input id="autocomplete" style="font-family:montserrat" placeholder="Enter a city" type="text" />
+      </div>
+
+      <div id="locationField">
+       
+      </div>
+    </div>
+
+    <div id="map"></div>
+
+    <div id="listing">
+      <table id="resultsTable">
+        <tbody id="results"></tbody>
+      </table>
+    </div>
+
+    <div style="display: none">
+      <div id="info-content">
+        <table>
+          <tr id="iw-url-row" class="iw_table_row">
+            <td id="iw-icon" class="iw_table_icon"></td>
+            <td id="iw-url"></td>
+          </tr>
+          <tr id="iw-address-row" class="iw_table_row">
+            <td class="iw_attribute_name">पता:</td>
+            <td id="iw-address"></td>
+          </tr>
+          <tr id="iw-phone-row" class="iw_table_row">
+            <td class="iw_attribute_name">टेलीफोन:</td>
+            <td id="iw-phone"></td>
+          </tr>
+          <tr id="iw-rating-row" class="iw_table_row">
+            <td class="iw_attribute_name">रेटिंग:</td>
+            <td id="iw-rating"></td>
+          </tr>
+          <tr id="iw-website-row" class="iw_table_row">
+            <td class="iw_attribute_name">वेबसाइट:</td>
+            <td id="iw-website"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      // This example uses the autocomplete feature of the Google Places API.
+      // It allows the user to find all hotels in a given place, within a given
+      // country. It then displays markers for all the hotels returned,
+      // with on-click details for each hotel.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var map, places, infoWindow;
+      var markers = [];
+      var autocomplete;
+      var countryRestrict = {'country': 'us'};
+      var MARKER_PATH = 'https://developers.google.com/maps/documentation/javascript/images/marker_green';
+      var hostnameRegexp = new RegExp('^https?://.+?/');
+
+      var countries = {
+        'in': {
+          center: {lat: 25.000654, lng: 77.685394},
+          zoom: 4
+        }
+      };
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: countries['in'].zoom,
+          center: countries['in'].center,
+          mapTypeControl: false,
+          panControl: false,
+          zoomControl: false,
+          streetViewControl: false
+        });
+
+        infoWindow = new google.maps.InfoWindow({
+          content: document.getElementById('info-content')
+        });
+
+        // Create the autocomplete object and associate it with the UI input control.
+        // Restrict the search to the default country, and to place type "cities".
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */ (
+                document.getElementById('autocomplete')), {
+              types: ['(cities)'],
+              componentRestrictions: countryRestrict
+            });
+        places = new google.maps.places.PlacesService(map);
+
+        autocomplete.addListener('place_changed', onPlaceChanged);
+
+        // Add a DOM event listener to react when the user selects a country.
+        document.getElementById('country').addEventListener(
+            'change', setAutocompleteCountry);
+      }
+
+      // When the user selects a city, get the place details for the city and
+      // zoom the map in on the city.
+      function onPlaceChanged() {
+        var place = autocomplete.getPlace();
+        if (place.geometry) {
+          map.panTo(place.geometry.location);
+          map.setZoom(15);
+          search();
+        } else {
+          document.getElementById('autocomplete').placeholder = 'Enter a city';
+        }
+      }
+
+      // Search for hotels in the selected city, within the viewport of the map.
+      function search() {
+        var search = {
+          bounds: map.getBounds(),
+          types: ['drugstore']
+        };
+
+        places.nearbySearch(search, function(results, status) {
+          if (status === google.maps.places.PlacesServiceStatus.OK) {
+            clearResults();
+            clearMarkers();
+            // Create a marker for each hotel found, and
+            // assign a letter of the alphabetic to each marker icon.
+            for (var i = 0; i < results.length; i++) {
+              var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+              var markerIcon = MARKER_PATH + markerLetter + '.png';
+              // Use marker animation to drop the icons incrementally on the map.
+              markers[i] = new google.maps.Marker({
+                position: results[i].geometry.location,
+                animation: google.maps.Animation.DROP,
+                icon: markerIcon
+              });
+              // If the user clicks a hotel marker, show the details of that hotel
+              // in an info window.
+              markers[i].placeResult = results[i];
+              google.maps.event.addListener(markers[i], 'click', showInfoWindow);
+              setTimeout(dropMarker(i), i * 100);
+              addResult(results[i], i);
+            }
+          }
+        });
+      }
+
+      function clearMarkers() {
+        for (var i = 0; i < markers.length; i++) {
+          if (markers[i]) {
+            markers[i].setMap(null);
+          }
+        }
+        markers = [];
+      }
+
+      // Set the country restriction based on user input.
+      // Also center and zoom the map on the given country.
+      function setAutocompleteCountry() {
+        var country = document.getElementById('country').value;
+        if (country == 'all') {
+          autocomplete.setComponentRestrictions({'country': []});
+          map.setCenter({lat: 15, lng: 0});
+          map.setZoom(2);
+        } else {
+          autocomplete.setComponentRestrictions({'country': country});
+          map.setCenter(countries[country].center);
+          map.setZoom(countries[country].zoom);
+        }
+        clearResults();
+        clearMarkers();
+      }
+
+      function dropMarker(i) {
+        return function() {
+          markers[i].setMap(map);
+        };
+      }
+
+      function addResult(result, i) {
+        var results = document.getElementById('results');
+        var markerLetter = String.fromCharCode('A'.charCodeAt(0) + (i % 26));
+        var markerIcon = MARKER_PATH + markerLetter + '.png';
+
+        var tr = document.createElement('tr');
+        tr.style.backgroundColor = (i % 2 === 0 ? '#F0F0F0' : '#FFFFFF');
+        tr.onclick = function() {
+          google.maps.event.trigger(markers[i], 'click');
+        };
+
+        var iconTd = document.createElement('td');
+        var nameTd = document.createElement('td');
+        var icon = document.createElement('img');
+        icon.src = markerIcon;
+        icon.setAttribute('class', 'placeIcon');
+        icon.setAttribute('className', 'placeIcon');
+        var name = document.createTextNode(result.name);
+        iconTd.appendChild(icon);
+        nameTd.appendChild(name);
+        tr.appendChild(iconTd);
+        tr.appendChild(nameTd);
+        results.appendChild(tr);
+      }
+
+      function clearResults() {
+        var results = document.getElementById('results');
+        while (results.childNodes[0]) {
+          results.removeChild(results.childNodes[0]);
+        }
+      }
+
+      // Get the place details for a hotel. Show the information in an info window,
+      // anchored on the marker for the hotel that the user selected.
+      function showInfoWindow() {
+        var marker = this;
+        places.getDetails({placeId: marker.placeResult.place_id},
+            function(place, status) {
+              if (status !== google.maps.places.PlacesServiceStatus.OK) {
+                return;
+              }
+              infoWindow.open(map, marker);
+              buildIWContent(place);
+            });
+      }
+
+      // Load the place information into the HTML elements used by the info window.
+      function buildIWContent(place) {
+        document.getElementById('iw-icon').innerHTML = '<img class="hotelIcon" ' +
+            'src="' + place.icon + '"/>';
+        document.getElementById('iw-url').innerHTML = '<b><a href="' + place.url +
+            '">' + place.name + '</a></b>';
+        document.getElementById('iw-address').textContent = place.vicinity;
+
+        if (place.formatted_phone_number) {
+          document.getElementById('iw-phone-row').style.display = '';
+          document.getElementById('iw-phone').textContent =
+              place.formatted_phone_number;
+        } else {
+          document.getElementById('iw-phone-row').style.display = 'none';
+        }
+
+        // Assign a five-star rating to the hotel, using a black star ('&#10029;')
+        // to indicate the rating the hotel has earned, and a white star ('&#10025;')
+        // for the rating points not achieved.
+        if (place.rating) {
+          var ratingHtml = '';
+          for (var i = 0; i < 5; i++) {
+            if (place.rating < (i + 0.5)) {
+              ratingHtml += '&#10025;';
+            } else {
+              ratingHtml += '&#10029;';
+            }
+          document.getElementById('iw-rating-row').style.display = '';
+          document.getElementById('iw-rating').innerHTML = ratingHtml;
+          }
+        } else {
+          document.getElementById('iw-rating-row').style.display = 'none';
+        }
+
+        // The regexp isolates the first part of the URL (domain plus subdomain)
+        // to give a short URL for displaying in the info window.
+        if (place.website) {
+          var fullUrl = place.website;
+          var website = hostnameRegexp.exec(place.website);
+          if (website === null) {
+            website = 'http://' + place.website + '/';
+            fullUrl = website;
+          }
+          document.getElementById('iw-website-row').style.display = '';
+          document.getElementById('iw-website').textContent = website;
+        } else {
+          document.getElementById('iw-website-row').style.display = 'none';
+        }
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=
+AIzaSyCtSZ5e8M4cjtgkAqZT6Lcg7fNSjiIGUo0
+&libraries=places&callback=initMap"
+        async defer></script>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">बंद करे</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    <!--Modal for Ambulance-->
+    <div class="modal fade" id="ambulanceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">रोगी वाहन:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <ul class="list-group">
+  <li class="list-group-item">LifeJet Ambulance,Address: Kalina Kurla Rd, Kolivery Village, Vidya Nagari, Kalina, Santacruz East, Mumbai, Maharashtra 400098<a href="tel:+918070001118">+91-8070001118</a></li>
+  <li class="list-group-item">Life Support Ambulance Service,Shop No.A/306, Shrushti Hights,4Th Road, Shree Prastha, Nalasopara West, Mumbai, Maharashtra 401209<a href="tel:+9199205 82266">+91-99205 82266</a></li>
+  <li class="list-group-item">EMS AMBULANCE SERVICE, SHOP NO 1 BETHELAM apt, Sardar Vallabhbhai Patel Rd, Borivali West, Mumbai, Maharashtra 400103<a href="tel:+9180804 39239">+91-80804 39239</a></li>
+  <li class="list-group-item">AMBUCARE CARDIAC AMBULANCE SERVICES,  A-3, NEW ASHWIN CHS, PLOT NO. 222-223, 51st TPS ROAD, BORIVALI WEST, Mumbai, Maharashtra 400091<a href="tel:+918048040332">+91-8048040332</a></li>
+  <li class="list-group-item">Sanjeevani Ambulance, Pipeline Rd, Khar, RPF Colony, Jawahar Nagar, Khar East, Mumbai, Maharashtra 400051<a href="tel:+919892181211">+91-9892181211</a></li>
+<li class="list-group-item">Medivic Train Rail Ambulance Services in Mumabai, Medivic Train Rail Ambulance Services in Mumabai <a href="tel:+91956012328911">+91-95601232891</a></li>
+  <li class="list-group-item">King Air Ambulance Services,Street Number 6, Jagatpura, Uttarakhand 263153<a href="tel:+917091360310"> +91-7091360310</a></li>
+  <li class="list-group-item">Tapan Ambulance Service,House Number - 42, Etanbag, Herbertpur, Uttarakhand 248142 <a href="tel:+9197607 31054"> +91-97607 31054</a></li>
+  <li class="list-group-item">Lucknow ambulance services, Vijaipur Colony, Vibhuti Khand, Gomti Nagar, Lucknow, Uttar Pradesh 226010<a href="tel:+9196514289130"> +91-96514 289130</a></li>
+  <li class="list-group-item">Ambulance Service In Noida,Fortis Hospital IPD Ward & Emergency Room Block, B Block Rd, Rasoolpur Nawada, Industrial Area, Sector 62, Noida, Uttar Pradesh 201301 <a href=""> </a></li> 
+<li class="list-group-item">Anand Ambulance Service (ICU Ambulance Service), J-2/99, Vijay Nagar, Shastri Nagar, Kanpur, Uttar Pradesh 208005<a href="tel: +919415132276"> +91-9415132276</a></li>              
+</ul>
+        </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">बंद करे</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal for Awareness-->
+    <div class="modal fade" id="awareModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">COVID-19 जागरूकता:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/W4HDj2CcPAM?rel=0" allowfullscreen></iframe>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">बंद करे</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <!--Modal for test-->
+    <div class="modal fade" id="testModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+<div class="modal-content">
+    <div class="card" style="width:60rem;margin-left:auto;margin-right:auto;">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" align="right">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <!--<input type="text" id="result"/>-->
+            <h5 class="card-title" style="font-family:montserrat"> दिए गए प्रश्नावली का उत्तर दें:</h5>
+            <img class="card-img-top-center" src="{% static 'question-dot.jpg' %}" alt="Card image cap" style="height:50%;">
+            <div class="card-body" align="middle">
+                <!--Questions and Answers here-->
+                <div class="row">
+                    <div class="col-4">
+                        <div class="list-group" id="list-tab" role="tablist">
+                            <a class="list-group-item list-group-item-action active" id="list-q1-list"
+                                data-toggle="list" href="#list-q1" role="tab" aria-controls="q1">Q1</a>
+                            <a class="list-group-item list-group-item-action" id="list-q2-list" data-toggle="list"
+                                href="#list-q2" role="tab" aria-controls="q2" >Q2</a>
+                            <a class="list-group-item list-group-item-action" id="list-q3-list" data-toggle="list"
+                                href="#list-q3" role="tab" aria-controls="q3">Q3</a>
+                            <a class="list-group-item list-group-item-action" id="list-q4-list" data-toggle="list"
+                                href="#list-q4" role="tab" aria-controls="q4">Q4</a>
+                            <a class="list-group-item list-group-item-action" id="list-q5-list" data-toggle="list"
+                                href="#list-q5" role="tab" aria-controls="q5">Q5</a>
+                            <a class="list-group-item list-group-item-action" id="list-q6-list" data-toggle="list"
+                                href="#list-q6" role="tab" aria-controls="q6">Q6</a>
+                            <a class="list-group-item list-group-item-action" id="list-q7-list" data-toggle="list"
+                                href="#list-q7" role="tab" aria-controls="q7">Q7</a>
+                        </div>
+                    </div>
+
+                    <div class="col-8">
+                        <div class="tab-content" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="list-q1" role="tabpanel"
+                                aria-labelledby="list-q1-list">क्या आप किसी विदेशी देश से आए हैं?
+                                <br><br>
+                                <!--Radio buttons for Q1-->
+                                <div class='container'>
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="q1_1" onclick="dis('5')" >हाँ
+                                        </label>
+
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="q1_2"  onclick="dis('2')"> नहीं
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="list-q2" role="tabpanel" aria-labelledby="list-q2-list">Which
+                                देश आप से आ गया है?
+                                <br><br>
+                                <!--Select for the Countries Arrived from-->
+                                <select class="form-control" onchange="myFunction(this)">
+                                    <option>None</option>
+                                    <option>United States of America</option>
+                                    <option>United Kigdom</option>
+                                    <option>Iran</option>
+                                    <option>Spain</option>
+                                    <option>Italy</option>
+                                    <option>Germany</option>
+                                    <option>UAE</option>
+                                    <option>Russia</option>
+                                    <option>Australia</option>
+                                    <option>China</option>
+                                </select>
+
+                            </div>
+                            <div class="tab-pane fade" id="list-q3" role="tabpanel" aria-labelledby="list-q3-list">What
+                                लक्षण आप अनुभव कर रहे हैं ?.
+                                <br><br>
+                                <!--Checkboxes for the symptoms-->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="q3_1" onclick="dis('+2')" >
+                                    <label class="form-check-label" for="q3_1">
+                                      तेज़ बुखार
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="q3_2" onclick="dis('+2')">
+                                    <label class="form-check-label" for="q3_2">
+                                        सूखी खाँसी
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="q3_3" onclick="dis('+3')">
+                                    <label class="form-check-label" for="q3_3">
+                                        हल्के सांस लेने की समस्या
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="q3_4" oonclick="dis('+3')">
+                                    <label class="form-check-label" for="q3_4">
+                                        गंभीर श्वास मुद्दा
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="q3_5" onclick="dis('+1')">
+                                    <label class="form-check-label" for="q3_5">
+                                        दस्त
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="q3_6" onclick="dis('+2')">
+                                    <label class="form-check-label" for="q3_6">
+                                        थकान
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" onclick="disable()" value="" id="q3_7" >
+                                    <label class="form-check-label" for="q3_7" >
+                                        कोई नहीं
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="list-q4" role="tabpanel" aria-labelledby="list-q4-list">
+                                करना
+                                 तुम धूम्रपान करते हो?
+                                <br><br>
+                                <!--Radio buttons for Q4-->
+                                <div class='container'>
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="option2" onclick="dis('+3')">हाँ
+                                        </label>
+
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="option1" > नहीं
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="list-q5" role="tabpanel" aria-labelledby="list-q5-list">
+                                करना
+                                 आपकी कोई मेडिकल कंडीशन है?
+                                <br><br>
+                                <!--Checkboxes for the Medical Condition-->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="q5_1" onclick="dis('+3')">
+                                    <label class="form-check-label" for="q5_1">
+                                        हृदय परेशानी
+                                    </label>
+                                </div>
+                                <br>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="q5_2" onclick="dis('+3')">
+                                    <label class="form-check-label" for="q5_2">
+                                        रक्तचाप का मुद्दा
+                                    </label>
+                                </div>
+                                <br>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="q5_3" onclick="dis('+2')">
+                                    <label class="form-check-label" for="q5_3">
+                                        मधुमेह
+                                    </label>
+                                </div>
+                                <br>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="q5_4" onclick="dis('+2')">
+                                    <label class="form-check-label" for="q5_4">
+                                       हड्डियों का मुद्दा
+                                    </label>
+                                </div>
+                                <br>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" onclick="disable2()" value="" id="q5_5" onclick="dis('+3')">
+                                    <label class="form-check-label"  for="q5_5">
+                                        कोई नहीं
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="list-q6" role="tabpanel" aria-labelledby="list-q6-list">
+                                आपके परिवार में कितने सदस्य है?
+                                <br><br>
+                                <!--Spinner for the Family-->
+                               <div class='container'>
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="q6_1" onclick="dis('+1')" >कोई नहीं
+                                        </label>
+
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="q6_2"  onclick="dis('+2')"> 1
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="q6_3" onclick="dis('+3')" >2
+                                        </label>
+
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="q6_4"  onclick="dis('+3')"> 3
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="q6_5" onclick="dis('+4')" >4
+                                        </label>
+
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="q6_6"  onclick="dis('+4')"> 4+
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="list-q7" role="tabpanel" aria-labelledby="list-q7-list">
+                               Have
+                                 आप हाल ही में डॉक्टर से मिले?
+                                <br><br>
+                                <!--Radio buttons for Q7-->
+                                <div class='container'>
+                                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-secondary">
+                                            <input type="radio" name="options" id="option2" onclick="dis('+3')">हाँ
+                                        </label>
+
+                                        <label class="btn btn-secondary"><!--onclick="dis('+2')"-->
+                                            <input type="radio" name="options" id="option1" onclick="dis('+2')" > नहीं
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button type="button" class="btn btn-outline-success"  data-toggle="modal" data-target="#exampleModalLong"  >प्रस्तुत</button>
+            <!-- Modal when Susceptibility for any modification required, Modal First-->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">पुष्टि:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        क्या आप सुनिश्चित हैं कि आपने उचित उत्तर दिए हैं?
+      </div>
+        <p style="color:red;margin-right:auto;margin-left:auto">नोट: आपको सभी उत्तर फिर से देने होंगे.</p>
+      <div class="modal-footer">
+        <button type="button"  class="btn btn-secondary" data-dismiss="modal" onclick="clr()">उत्तर बदलें</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong2" id="btn2" onclick="solve()">Yes</button>
+        <!--Modal for Yes in Second Modal-->
+        <div class="modal fade" id="exampleModalLong2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="font-family:montserrat;">आपकी संवेदनशीलता का स्कोर है:</h5>
+      </div>
+      <div class="modal-body">
+        <!--<h1 class="text-center" id ="sscore" style="font-family:montserrat;color:red">20/40</h1>-->
+           <input  id="result" style="font-family:montserrat;font-size:30px;text-align: center;" readonly/>
+        <p style="color:black;"id ="score_des"> </p>
+    </div>
+      <div class="modal-footer">
+        <button type="button" id="bookbtn" class="btn btn-primary" style="color:white;"  onclick="location.href='/hi/profile/maps/'" >एक अपॉइंटमेंट बुक करें</button>
+        <button type="button" id="canbtn" class="btn btn-secondary" data-dismiss="modal">बंद करे</button>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</div>
+            <button type="button" class="btn btn-outline-danger" onclick="clr()">रीसेट</button>
+        <p class="text-center" style="color:red;">प्रश्नावली का उत्तर देने के लिए फिर से "रीसेट" पर क्लिक करें।</p>        
+    </div>
+      </div>
+  </div>
+</div>
+    <script> 
+		//function that display value 
+		function dis(val) 
+		{ 
+			document.getElementById("result").value+=val 
+		} 
+		
+		//function that evaluates the digit and return result 
+		function solve() 
+		{ 
+			let x = document.getElementById("result").value 
+			let y = eval(x) 
+			document.getElementById("result").value = y+"/40";
+            if(y<12){
+                document.getElementById("result").style.color = "green";
+                document.getElementById("score_des").innerHTML = "आप कम संवेदनशीलता स्कोर है। मूल्यांकन करने के लिए धन्यवाद।";
+                document.getElementById("bookbtn").disabled = true;
+                document.getElementById("bookbtn").style.backgroundColor ="Green";
+                document.getElementById("bookbtn").innerHTML ="मूल्यांकन किया गया"
+            }else{
+                document.getElementById("result").style.color = "red";
+                document.getElementById("score_des").innerHTML = "आप उच्च संवेदनशीलता स्कोर है। बुक अपॉइंटमेंट पर क्लिक करें।";
+                document.getElementById("canbtn").style.display ="none";
+            }
+            
+		} 
+		
+		//function that clear the display 
+		function clr() 
+		{ 
+            document.getElementById("q1_1").checked = false;
+            document.getElementById("q1_2").checked = false;
+            document.getElementById("q3_1").checked = false;
+            document.getElementById("q3_2").checked = false;
+            document.getElementById("q3_3").checked = false;
+            document.getElementById("q3_4").checked = false;
+            document.getElementById("q3_5").checked = false;
+            document.getElementById("q3_6").checked = false;
+            document.getElementById("q3_7").checked = false;
+            document.getElementById("q4_1").checked = false;
+            document.getElementById("q4_2").checked = false;
+            document.getElementById("q5_1").checked = false;
+            document.getElementById("q5_2").checked = false;
+            document.getElementById("q5_3").checked = false;
+            document.getElementById("q5_4").checked = false;
+            document.getElementById("q5_5").checked = false;
+            document.getElementById("q6_1").checked = false;
+            document.getElementById("q6_2").checked = false;
+            document.getElementById("q6_3").checked = false;
+            document.getElementById("q6_4").checked = false;
+            document.getElementById("q6_5").checked = false;
+            document.getElementById("q6_6").checked = false;
+            document.getElementById("q7_1").checked = false;
+            document.getElementById("q7_2").checked = false;
+			document.getElementById("result").value = "" 
+		} 
+        function disable(){
+                                    if(document.getElementById("q3_7").checked ==true){
+                                        document.getElementById("q3_1").disabled = true;
+                                        document.getElementById("q3_2").disabled = true;
+                                        document.getElementById("q3_3").disabled = true;
+                                        document.getElementById("q3_4").disabled = true;
+                                        document.getElementById("q3_5").disabled = true;
+                                        document.getElementById("q3_6").disabled = true;
+                                    }
+                                    else{
+                                        document.getElementById("q3_1").disabled = false;
+                                        document.getElementById("q3_2").disabled = false;
+                                        document.getElementById("q3_3").disabled = false;
+                                        document.getElementById("q3_4").disabled = false;
+                                        document.getElementById("q3_5").disabled = false;
+                                        document.getElementById("q3_6").disabled = false;
+                                    }
+                                 }
+        
+        
+        function disable2(){
+                                    if(document.getElementById("q5_5").checked ==true){
+                                        document.getElementById("q5_1").disabled = true;
+                                        document.getElementById("q5_2").disabled = true;
+                                        document.getElementById("q5_3").disabled = true;
+                                        document.getElementById("q5_4").disabled = true;
+                                        
+                                    }
+                                    else{
+                                        document.getElementById("q5_1").disabled = false;
+                                        document.getElementById("q5_2").disabled = false;
+                                        document.getElementById("q5_3").disabled = false;
+                                        document.getElementById("q5_4").disabled = false;
+                                       
+                                    }
+                                 }
+	</script> 
+    
+<!--Modal for Volunteer-->
+  <div class="modal fade" id="volunteerModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">मैं एक COVID योद्धा हूं:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form class="was-validated">
+          
+    <label for="staticState" >क्या आप समाज के प्रति योगदान के लिए तैयार हैं?</label>
+    <div>
+      <select  class="form-control" required >
+                                    <option value="">कोई नहीं</option>
+                                    <option>हाँ</option>
+          <option>नहीं</option>
+        </select>
+           </div>
+              <label>आप समाज की दिशा में कैसे योगदान देना चाहेंगे?</label>  
+               <div>
+      <select  class="form-control" required >
+                                    <option value="">कोई नहीं</option>
+                                    <option>खाना</option>
+          <option>ऊर्जा</option>
+        </select>
+           </div>
+              <div id="myDIV"></div>
+              </form>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="change" onclick="myFunction()" >Submit</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">बंद करे</button>
+      </div>
+        <p class="text-center" style="color:black;">इस पेज के नेविगेशन बार में दान के लिए दान पर क्लिक करें।</p>
+    </div>
+  </div>
+</div> 
+<!--Register for Volunteer-->
+ <script>
+function myFunction() {
+  var x = document.getElementById("change");
+  if (x.innerHTML === "") {
+    x.val("पंजीकरण सफलतापूर्वक हो गया है");
+  } else {
+    x.innerHTML = "पंजीकरण सफलतापूर्वक हो गया है";
+    x.style.backgroundColor =  "green";
+    x.disabled = true;
+  }
+}
+     
+     function myFunction1() {
+  var x = document.getElementById("change1");
+  if (x.innerHTML === "") {
+    x.val("पंजीकरण सफलतापूर्वक हो गया है");
+  } else {
+    x.innerHTML = "Successfully Registered";
+    x.style.backgroundColor =  "darkgreen";
+    x.disabled = true;
+    document.getElementById("demo").innerHTML = "हम आप तक वापस आ रहे हैं जल्द ही। कृपया आपके अनुरोध पर कार्यवाही करने के दौरान धैर्य रखें।";
+  }
+}
+</script>   
+<!--Modal for Doctor-->  
+<div class="modal fade" id="doctorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content" style="background-color:green;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color:white">डॉक्टर से मिलें:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <h5 style="color:white">डॉक्टर से मिलने से पहले:</h5>
+          <p style="color:white">चरण 1: यह परामर्श वीडियो कॉन्फ्रेंसिंग के माध्यम से किया जाएगा</p>
+         <p style="color:white">चरण 2: परामर्श "SayNamaste App" के माध्यम से किया जाएगा</p>
+          <p style="color:white">चरण 3: आपको परामर्श के लिए ईमेल / एसएमएस के माध्यम से एक लिंक प्रदान किया जाएगा। </p>
+        <p style="color:white">नोट: परामर्श चिकित्सक की उपलब्धता पर निर्भर करता है। कृपया अपनी जिम्मेदारी पूरी करते हुए धैर्य रखें। </p>
+          <form class="was-validated">
+          <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">संदेश:</span>
+  </div>
+ <textarea class="form-control is-invalid" id="validationTextarea" placeholder="Enter your Message Here" required></textarea>
+    <div style="font-size:24px;" class="invalid-feedback">
+      कृपया अपनी चिंता ऊपर दर्ज करें।
+    </div>
+ 
+              </div>
+              </form>
+              
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">बंद करे</button>
+        <button type="button" class="btn btn-primary" id="change1" onclick="myFunction1()">एक अपॉइंटमेंट रजिस्टर करें</button>
+          </div>
+        <p class="text-center" id="demo"></p>
+    </div>
+  </div>
+</div>
+ <!-- Modal for Vocational training--> 
+    <div class="modal fade" id="learnModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content"   style="background-color:#E0E6F8;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" >व्यावसायिक ऑनलाइन प्रशिक्षण:</h5>
+        <button type="button" class="close" data-dismiss="modal"  aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class="row row-cols-1 row-cols-md-3">
+  <div class="col mb-4">
+    <div class="card">
+  <img src="{% static 'science_icon.png' %}" style="background-color:#7401DF;" class="card-img" alt="...">
+  <div class="card-body">
+    <h5 class="card-title" >विज्ञान</h5>
+    <p class="card-text" style="color:black;">आप नीचे ब्याज की विषय चुनें:</p>
+      <div class="container">
+  <div class="row">
+    <div class="col">
+        <a type="button" class="btn btn-success" style="font-family:montserrat;" target="_blank" href="https://onlinemeded.org/">मेडिकल</a>
+      </div>
+    <div class="col">
+        <a type="button" class="btn btn-success" style="font-family:montserrat;" target="_blank" href="https://new.engineering.com/">अभियांत्रिकी</a>
+      </div>
+    <div class="w-100">
+      </div>
+    <div class="col">
+       <a type="button" class="btn btn-success" style="font-family:montserrat;" target="_blank" href="https://www.w3schools.com/">कोडिंग</a>
+      </div>
+    <div class="col">
+        <a type="button" class="btn btn-success" style="font-family:montserrat;" target="_blank" href="https://www.khanacademy.org/science/physics">भौतिक विज्ञान</a>
+      </div>
+  </div>
+</div>   
+  </div>
+</div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+  <img src="{% static 'commerce_icon.png' %}" style="background-color:#7401DF;" class="card-img" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">व्यापार</h5>
+    <p class="card-text" style="color:black;">नीचे अपनी रुचि के विषय का चयन करें:</p>
+   <div class="container">
+  <div class="row">
+    <div class="col">
+        <a type="button" class="btn btn-success" style="font-family:montserrat;" target="_blank" href="https://www.accountingcoach.com/">हिसाब किताब</a>
+      </div>
+    <div class="col">
+        <a type="button" class="btn btn-success" style="font-family:montserrat;" target="_blank" href="https://www.edx.org/learn/economics">बैंकिंग</a>
+      </div>
+    <div class="w-100">
+      </div>
+    <div class="col">
+       <a type="button" class="btn btn-success" style="font-family:montserrat;" target="_blank" href="https://www.classcentral.com/course/swayam-direct-tax-laws-and-practice-14009">कर</a>
+      </div>
+  </div>
+</div>   
+  </div>
+</div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+  <img src="{% static 'arts_icon.png' %}" style="background-color:#7401DF;" class="card-img" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">कला</h5>
+    <p class="card-text" style="color:black;">नीचे अपनी रुचि के विषय का चयन करें:</p>
+    <div class="container">
+  <div class="row">
+    <div class="col">
+        <a type="button" class="btn btn-success" style="font-family:montserrat;" target="_blank" href="https://www.edx.org/learn/psychology">मनोविज्ञान</a>
+      </div>
+    <div class="col">
+        <a type="button" class="btn btn-success" style="font-family:montserrat;" target="_blank" href="https://www.sociologygroup.com/">नागरिक सास्त्र</a>
+      </div>
+    <div class="w-100">
+      </div>
+    <div class="col">
+       <a type="button" class="btn btn-success" style="font-family:montserrat;" target="_blank" href="https://sanskrit.inria.fr/portal.html">संस्कृत</a>
+      </div>
+     <div class="col">
+       <a type="button" class="btn btn-success" style="font-family:montserrat;" target="_blank" href="https://psychcentral.com/">राजनीति विज्ञान</a>
+      </div>
+       <div class="w-100">
+      </div>
+    <div class="col">
+       <a type="button" class="btn btn-success" style="font-family:montserrat;" target="_blank" href="https://www.history.com/">इतिहास</a>
+      </div>
+  </div>
+</div>
+  </div>
+</div>
+  </div>
+  <div class="col mb-4">
+    <div class="card">
+  <img src="{% static 'icon_upsc.png' %}" style="background-color:#7401DF;" class="card-img" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">UPSC</h5>
+    <p class="card-text" style="color:black;">नीचे अपनी रुचि के विषय का चयन करें:</p>
+    <a type="button" class="btn btn-success" style="font-family:montserrat;" target="_blank" href="https://www.drishtiias.com/">UPSC</a>
+  </div>
+</div>
+  </div>
+   <div class="col mb-4">
+    <div class="card" >
+  <img src="{% static 'eleventh_icon.png'%}" style="background-color:#7401DF;" class="card-img" alt="...">
+  <div class="card-body" >
+    <h5 class="card-title" >11th/12th (Science)</h5>
+      <p class="card-text" style="color:black;">नीचे अपनी रुचि के विषय का चयन करें:</p>
+      <a type="button" class="btn btn-success" style="font-family:montserrat;" target="_blank" href="https://www.khanacademy.org/search?search_again=1&page_search_query=class+11">11th</a>
+      <a type="button" class="btn btn-success" style="font-family:montserrat;" target="_blank" href="https://www.khanacademy.org/search?search_again=1&page_search_query=class+12">12th</a>
+    
+  </div>
+</div>
+  </div>
+ <div class="col mb-4">
+    <div class="card">
+  <img src="{% static 'icon_school.png'%}" style="background-color:#7401DF;" class="card-img" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">1st to 10th</h5>
+    <p class="card-text" style="color:black;">नीचे अपनी रुचि के विषय का चयन करें</p>
+    <a type="button" class="btn btn-success" style="font-family:montserrat;" target="_blank" href="http://cart.ebalbharati.in/BalBooks/ebook.aspx">चलो सीखें</a>
+  </div>
+</div>
+  </div> 
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button"  class="btn btn-outline-secondary" data-dismiss="modal">बंद करे</button>
+          </div>
+        <p class="text-center" id="demo"></p>
+    </div>
+        </div>
+  </div>
+
+<!--Modal for Msme-->
+<div class="modal fade" id="msmeModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">MSME उत्पाद और सेवाएँ:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <p align="center">
+          <img src="{% static 'products_services.jpg'%}"/>
+              
+          </p>
+          <p align="center" style="color:black;font-size:24px">उत्पादों और सेवाओं के नीचे:</p>
+          <div class="container" style="font-family:montserrat;">
+  <div class="row row-cols-3">
+      <div class="col">
+       <ul class="list-group">
+  <li class="list-group-item active">Computers</li>
+           <li class="list-group-item"><a target="_blank" href="https://mkp.gem.gov.in/computers-desktop-computer/search">Desktops</a></li>
+           <li class="list-group-item"><a target="_blank" href="https://mkp.gem.gov.in/computers-0806nb/search">Laptops</a></li>
+           <li class="list-group-item"><a target="_blank" href="https://mkp.gem.gov.in/computers-0806aio/search">All in One</a></li>
+           <li class="list-group-item"><a target="_blank" href="https://mkp.gem.gov.in/computers-server/search">Servers</a></li>
+</ul>
+          </div>
+      <div class="col">
+          <ul class="list-group">
+  <li class="list-group-item active">Office Machines</li>
+           <li class="list-group-item"><a target="_blank" href="https://mkp.gem.gov.in/duplicating-machines-0901mfm/search">Multifunctional Machine</a></li>
+           <li class="list-group-item"><a target="_blank" href="https://mkp.gem.gov.in/computer-printer-0901print/search">Printers</a></li>
+           <li class="list-group-item"><a target="_blank" href="https://mkp.gem.gov.in/paper-processing-machines-and-accessories-paper-shredding-machines79/search">Paper Shredding Machine</a></li>
+           <li class="list-group-item"><a target="_blank" href="https://mkp.gem.gov.in/projectors-and-supplies-28052-mmp/search">Multimedia Projector</a></li>
+</ul>
+          </div>
+      <div class="col">
+          <ul class="list-group">
+  <li class="list-group-item active">Automobile</li>
+           <li class="list-group-item" ><a target="_blank" href="https://mkp.gem.gov.in/cars/search">Cars</a></li>
+           <li class="list-group-item"><a target="_blank" href="https://mkp.gem.gov.in/buses/search">Buses</a></li>
+           <li class="list-group-item"><a target="_blank" href="https://mkp.gem.gov.in/utility-vehicles/search">Utility Vehicle</a></li>
+           <li class="list-group-item"><a target="_blank" href="https://mkp.gem.gov.in/ambulances/search">Ambulance</a></li>
+</ul>
+          </div>
+       </div>
+               <div class="row row-cols-3">
+      <div class="col">
+       <ul class="list-group">
+  <li class="list-group-item active">Office Suppliers</li>
+           <li class="list-group-item"><a target="_blank" href="https://mkp.gem.gov.in/un000000-un000000-1-un000000-2-ball-point-pen/search">Ball Point Pen</a></li>
+           <li class="list-group-item"><a target="_blank" href="https://mkp.gem.gov.in/gel-pen/search">Gel Pen</a></li>
+           <li class="list-group-item"><a target="_blank" href="https://mkp.gem.gov.in/writing-and-printing-paper-plain-copier-paper/search">Printer or Photo Copier Paper</a></li>
+          </ul>
+          </div>
+      <div class="col">
+          <ul class="list-group">
+  <li class="list-group-item active">Appliances</li>
+           <li class="list-group-item" ><a target="_blank" href="https://mkp.gem.gov.in/domestic-appliances-and-supplies-and-consumer-electronic-products-consumer-electronics-audio-and-visual-equipmentold-28051-tv/search">Television</a></li>
+           <li class="list-group-item"><a target="_blank" href="https://mkp.gem.gov.in/air-conditioner/search">Air Conditioner</a></li>
+           <li class="list-group-item"><a target="_blank" href="https://mkp.gem.gov.in/online-ups/search">Online UPS</a></li>
+</ul>
+                   </div>
+              <div class="col">
+                  <br>
+                  <br>
+                  <br>
+              <a type="button" target="_blank" href="https://mkp.gem.gov.in/services#!/browse/" style="width:340px;" class="btn btn-primary">सेवाएं</a>
+                   </div>
+          </div>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">खारिज</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Register for Volunteer-->
+ <script>
+function passFunc() {
+  var x = document.getElementById("personal");
+  var y = document.getElementById("note1");
+  if (x.innerHTML === "") {
+    x.val("Successfully Registered");
+
+  } else {
+    x.innerHTML = "Successfully Registered";
+    x.style.backgroundColor =  "green";
+    x.disabled = true;
+    y.innerHTML = "You will Receieve the Confirmation via Email or SMS soon. Your Patience is Highly appreciated";
+    
+  }
+}
+     
+function transportFunc() {
+  var x2 = document.getElementById("veh");
+  var y = document.getElementById("note2");
+  if (x2.innerHTML === "") {
+    x2.val("Successfully Registered");
+  } else {
+    x2.innerHTML = "Successfully Registered";
+    x2.style.backgroundColor =  "green";
+    x2.disabled = true;
+    y.innerHTML = "You will Receieve the Confirmation via Email or SMS soon. Your Patience is Highly appreciated";
+  }
+}
+</script>   
+<!--Modal for Pass Services-->
+    <div class="modal fade" id="passModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">व्यक्तिगत और परिवहन पास सुविधा:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <h3 style="font-family:montserrat;color:red;">नोट: व्यक्तिगत पास केवल आवश्यक सेवाओं तक पहुँचने की अनुमति के लिए व्यक्तिगत के लिए है।</h3>
+          <form class="was-validated">
+          <div class="form-group">
+    <label for="exampleFormControlSelect2">अपना उद्देश्य चुनें:</label>
+    <select class="form-control" id="exampleFormControlSelect2" required>
+      <option value="">कोई नहीं</option>
+      <option>काम</option>
+      <option>दवा</option>
+      <option>दैनिक आवश्यक</option>
+      <option>अस्पताल प्रवेश</option>
+    </select>
+  </div>
+          </form>
+            <p style="color:black;" id="note1"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">बंद करे</button>
+        <button type="button" class="btn btn-primary" id="personal" onClick="passFunc()">प्रस्तुत</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal"  data-target="#transportModal">परिवहन पास</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal for Transportation-->
+     <div class="modal fade" id="transportModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">परिवहन पास:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <h3 style="font-family:montserrat;color:red;">नोट: परिवहन पास सेवा उन लोगों के लिए है जो ऐसे श्रमिक हैं जिनकी आवश्यकता अपने कार्यक्षेत्र की यात्रा करने के लिए है।</h3>
+          <form class="was-validated">
+         <div class="mb-3">
+    <div class="input-group is-invalid">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="validatedInputGroupSelect">Are you an Essential Service worker?</label>
+      </div>क्या आप एक आवश्यक सेवा कार्यकर्ता हैं?
+      <select class="custom-select" id="validatedInputGroupSelect" required>
+        <option value="">चुनें...</option>
+        <option value="no">नहीं</option>
+          <option value="yes">हाँ</option>
+      </select>
+    </div>
+    <div class="invalid-feedback">
+      विकल्प चुनें।
+    </div>
+  </div>
+              <div class="mb-3">
+    <div class="input-group is-invalid">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="validatedInputGroupPrepend">वाहन नंबर दर्ज करें:</span>
+      </div>
+      <input type="text" class="form-control is-invalid" aria-describedby="validatedInputGroupPrepend" required>
+    </div>
+    <div class="invalid-feedback">
+      वाहन नंबर सावधानी से दर्ज करें।
+    </div>
+  </div>
+          </form>
+          <p style="color:black;" id="note2"></p>
+          
+      </div>
+      <div class="modal-footer">
+          <button type="button" id="veh" class="btn btn-primary" onClick="transportFunc()">मूल्यांकन के लिए सबमिट करें</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">बंद करे</button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+  
+
+ 
+
+        <br><br><br><br><br><br>
+    <div class="container" style="margin-left:auto;margin-right:auto;float:center;" align="center">
+<div class="row row-cols-1 row-cols-md-3" >
+  <div class="col mb-4">
+    <div class="card" style="width: 20rem;">
+      <img src="{% static 'questions_profile.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">परीक्षा लो</h5>
+        <p class="card-text" style="color:black">दिए गए प्रश्नावली का उत्तर दें और अपने स्वास्थ्य का मूल्यांकन करें।</p>
+          <button type="button" class="btn btn-outline-dark" style="font-family:montserrat;" data-toggle="modal"  data-target="#testModal">चुनते हैं</button>
+      </div>    
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card" style="width: 20rem;">
+      <img src="{% static 'medicalstor_profile.jpg' %}"  class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">मेडिकल स्टोर</h5>
+        <p class="card-text" style="color:black;">भारत वर्ल्ड लीडिंग फार्मास्यूटिकल डेवलपर है। इसका रचनात्मक लाभ उठाएं।</p> 
+        <button type="button" class="btn btn-outline-dark" style="font-family:montserrat;"   data-toggle="modal"  data-target="#medicalModal">चुनते हैं</button>
+      </div>
+    </div>
+  </div>
+    <div class="col mb-4">
+    <div class="card" style="width: 20rem;">
+      <img src="{% static 'learn_image.jpg' %}"  class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">वोकेशनल ऑनलाइन लर्निंग</h5>
+        <p class="card-text" style="color:black;">जो युवा इस महामारी में उत्पादक होना चाहते हैं। फ्यूचर के लिए हमारे पास आपके लिए कुछ है।</p> 
+        <button type="button" class="btn btn-outline-dark" style="font-family:montserrat;"   data-toggle="modal"  data-target="#learnModal">चुनते हैं</button>
+      </div>
+    </div>
+  </div>
+  <div class="col mb-4">
+    <div class="card" style="width: 20rem;">
+      <img src="{% static 'ambulance_profile.webp' %}"  class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">एम्बुलेंस सुविधा</h5>
+        <p class="card-text" style="color:black">स्वच्छ, स्वस्थ और त्वरित वाहन। क्योंकि हम रोगी के लिए आपकी चिंता और प्यार को समझते हैं।</p>
+          <button type="button" class="btn btn-outline-dark" data-toggle="modal" style="font-family:montserrat;"   data-target="#ambulanceModal">चुनते हैं</button>
+      </div>
+    </div>
+  </div>
+    
+    <div class="col mb-4">
+    <div class="card" style="width: 20rem;">
+      <img src="{% static 'doctor_profile.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">डॉक्टर से मिलें</h5>
+        <p class="card-text" style="color:black">वे स्पेशल पावर वाले इंसान हैं। आपको इलाज करने की शक्तियां। वे COVID-19 वारियर्स हैं।</p>
+          <button type="button" class="btn btn-outline-dark" data-toggle="modal" style="font-family:montserrat;"  data-target="#doctorModal">चुनते हैं</button>
+      </div>
+    </div>
+  </div>
+    
+  <div class="col mb-4">
+    <div class="card" style="width: 20rem;">
+      <img src="{% static 'pass_image.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">सेवाओं को पास करें</h5>
+        <p class="card-text" style="color:black">आवश्यक या दैनिक ट्रांस के लिए एक व्यक्तिगत पास के लिए अनुरोध करना चाहते हैं।</p>
+          <button type="button" class="btn btn-outline-dark" data-toggle="modal" style="font-family:montserrat;"  data-target="#passModal">चुनते हैं</button>
+      </div>
+    </div>
+  </div>
+    
+    <div class="col mb-4">
+    <div class="card" style="width: 20rem;">
+      <img src="{% static 'awareness_profile.webp' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">जागरूकता</h5>
+        <p class="card-text" style="color:black">COVID -19 को समझने के लिए कुछ समय दें। अपना मूल्य समय खुद को शिक्षित करने में बिताया।</p>
+          <button type="button" class="btn btn-outline-dark" style="font-family:montserrat;"  data-toggle="modal"  data-target="#awareModal">चुनते हैं</button>
+      </div>
+    </div>
+  </div>
+    <div class="col mb-4">
+    <div class="card" style="width: 20rem;">
+      <img src="{% static 'volunteer_image.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">वायरस बाबा वालंटियरिंग</h5>
+        <p class="card-text" style="color:black">किसी देश का नागरिक, किसी व्यक्ति या संप्रभु राष्ट्र का कानूनी सदस्य होने या उसकी सुरक्षा के बदले किसी सरकार के प्रति निष्ठा रखने वाला देश या कानून के तहत मान्यता प्राप्त व्यक्ति होता है, चाहे वह घर में हो या विदेश में। एक नागरिक देश के प्रमुख स्तंभों में से एक है।</p>
+          <button type="button" class="btn btn-outline-dark" style="font-family:montserrat;"  data-toggle="modal"  data-target="#volunteerModal">चुनते हैं</button>
+      </div>
+    </div>
+  </div>
+    
+    <div class="col mb-4">
+    <div class="card" style="width: 20rem;">
+      <img src="{% static 'msme_profile.jpg' %}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">MSMSE उत्पाद</h5>
+        <p class="card-text" style="color:black">भारत में MSMEs द्वारा प्रदान किए गए उत्पादों और सेवाओं पर एक नज़र रखना चाहते हैं। चेकआउट करने के लिए Select पर क्लिक करें</p>
+          <button type="button" class="btn btn-outline-dark" style="font-family:montserrat;"  data-toggle="modal"  data-target="#msmeModal">चुनते हैं</button>
+      </div>
+    </div>
+  </div>
+    
+</div>
+    </div>
+            <script src={% static 'calculations.js' %}></script>
+
+          <br>
+        <br>
+    <!--<div class="embed-responsive embed-responsive-16by9">
+  <iframe class="embed-responsive-item" style="width:300px;height:300px;"src="https://www.youtube.com/embed/W4HDj2CcPAM?rel=0" allowfullscreen></iframe>
+</div>-->
+    <h1 style="font-family:montserrat;color:white" align="center" >Government Links and Services</h1>
+<div class="container" style="max-width:90%;" align="center">
+      <a type="button" class="btn btn-outline-light" style="font-family:montserrat;" target="_blank" href="https://www.india.gov.in/">National Portal of India</a>
+      <a type="button" class="btn btn-outline-light" style="font-family:montserrat;" target="_blank" href="https://www.mohfw.gov.in/">Ministry of Health and Family Affair</a>
+      <a type="button" class="btn btn-outline-light" style="font-family:montserrat;" target="_blank" href="https://www.mygov.in/">myGOV</a>
+      <a type="button" class="btn btn-outline-light" style="font-family:montserrat;" target="_blank" href="https://mhrd.gov.in/">Ministry of Human Resource and Development</a>
+      <a type="button" class="btn btn-outline-light" style="font-family:montserrat;" target="_blank" href="https://www.nic.in/">National Information Centre</a>
+      <a type="button" class="btn btn-outline-light" style="font-family:montserrat;" target="_blank" href="https://data.gov.in/">DataGov</a>
+      </div>
+        <br><br><br><br><br><br>
+        <div class="footer-copyright text-center py-3" style="color:white">© 2020 Copyright:
+            <a href="#"> virusbaba.com</a>
+        </div>
+        <!-- Copyright -->
+
+
+        <!-- Footer -->
+        <p translate="yes" style="font-family:montserrat;color:white;" align="center">Application Developed by:
+            Nilesh
+            Ohol.</p>
+
+
+    
+    {% endblock %}
+ </body>

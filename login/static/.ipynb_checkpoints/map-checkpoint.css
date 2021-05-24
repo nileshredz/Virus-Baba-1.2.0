@@ -1,0 +1,29 @@
+body{
+    background-image: url("background.jpeg");
+    
+}
+
+#map { 
+    width: 100%; 
+    height: 400px; 
+    background-color: grey; 
+  }
+
+p{
+    color:white;
+    font-family: montserrat;
+}
+
+card{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form{
+    font-family: montserrat;
+}
+
+h5{
+    font-family: montserrat;
+
+}

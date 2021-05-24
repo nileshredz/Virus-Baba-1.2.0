@@ -1,0 +1,233 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login in Virus Baba</title>
+    
+</head>
+<body>
+{% block content %}
+{% if messgkn %}
+<script>
+    alert('{{messgkn}}')
+    </script>
+    {% endif %}
+    
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent;">
+        <a class="navbar-brand" href="#">
+    <img src="{% static 'logo.png' %}" width="40%"  alt=""></a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="background-color:#D0D3D4;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" style="color:white">ಮನೆ <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticAbout" >ಬಗ್ಗೆ</a>
+                </li>
+                <!--Modal for About-->
+                <div class="modal fade" id="staticAbout" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">ಬಗ್ಗೆ:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src={% static 'logob.png' %} />
+        <p style="color:black;">ವೈರಸ್ ಬಾಬಾ ಒಂದು ಅಪ್ಲಿಕೇಶನ್ ಆಗಿದ್ದು ಅದು 1.3 ಬಿಲಿಯನ್ ಭಾರತೀಯರನ್ನು ಪರೀಕ್ಷಿಸಲು ಅಸಾಧ್ಯವಾಗಿದೆ. ಈ ಅಪ್ಲಿಕೇಶನ್ COVID-19 ರ ಸಾಮಾಜಿಕ ದೂರ ಮತ್ತು ಟೆಸ್ಟಿನ್ ಅನ್ನು ಸುಲಭವಾಗಿ ಉತ್ತೇಜಿಸುತ್ತದೆ. ನೀವು ಉತ್ತರಿಸುವ ಪ್ರಶ್ನಾವಳಿಗಳನ್ನು ಅವಲಂಬಿಸಿ COVID-19 ರ ಸ್ಕೋರ್ ಅನ್ನು ನಿಮಗೆ ಸೂಚಿಸುತ್ತದೆ ಮತ್ತು ನಿಮ್ಮ ಹತ್ತಿರದ ಪರೀಕ್ಷಾ ಕೇಂದ್ರಗಳಲ್ಲಿ ನೇಮಕಾತಿಯನ್ನು ಕಾಯ್ದಿರಿಸಲು ಸಹಾಯ ಮಾಡುತ್ತದೆ. </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">ಮುಚ್ಚಿ</button>
+        <button type="button" class="btn btn-primary">ಅರ್ಥವಾಯಿತು</button>
+      </div>
+    </div>
+  </div>
+</div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticContact">ಸಂಪರ್ಕಿಸಿ</a>
+                </li>
+                <!--Modal for Contact-->
+                <div class="modal fade" id="staticContact" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">ಸಂಪರ್ಕಿಸಿ:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src={% static 'logob.png' %} />
+        <p style="color:black;" align="center">ಅಪ್ಲಿಕೇಶನ್ ಅಭಿವೃದ್ಧಿಪಡಿಸಿದೆ: ನಿಲೇಶ್ .ಡಿ. ಓಹೋಲ್ </p>
+        <p style='color:black;'>Email ID:<a href="">nileshohol@live.in</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">ಮುಚ್ಚಿ</button>
+        <button type="button" class="btn btn-primary">ಅರ್ಥವಾಯಿತು</button>
+      </div>
+    </div>
+  </div>
+</div>
+                <li class="nav-item">
+            <a class="nav-link" href="/stat/" style="color:white" >ಅಂಕಿಅಂಶಗಳು</a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#alert">ದಾನ</a>
+          </li>
+            <!--Modal for Donation-->
+            <div class="modal fade" id="alert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">ದಾನ/ಮೂಲೆಗುಂಪು ಜೊತೆ ಬೆಂಬಲ ಬೇಕು:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ಈ ಸೇವೆಗಳನ್ನು ಪ್ರವೇಶಿಸಲು ದಯವಿಟ್ಟು ಸೈನ್ ಅಪ್ / ಲಾಗಿನ್ ಮಾಡಿ
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">ಅರ್ಥವಾಯಿತು</button>
+      </div>
+    </div>
+  </div>
+</div>
+             <li class="nav-item">
+            <a class="nav-link" href="#" style="color:white"  data-toggle="modal" data-target="#alert">ಮೂಲೆಗುಂಪು ಜೊತೆ ಬೆಂಬಲ ಬೇಕು</a>
+          </li>
+            </ul>
+        </div>
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <a  type="button" style="font-family:montserrat;color:white;" data-toggle="modal" data-target="#staticLogin">ಲಾಗಿನ್ ಮಾಡಿ/ಸೈನ್ ಅಪ್ ಮಾಡಿ</a>
+        </div>
+        <!--Modal for Login-->
+        <div class="modal fade" id="staticLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalScrollableTitle">ಲಾಗಿನ್ ಮಾಡಿ:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <form class ="was-validated" action="/kn/profile/" method="post" >
+             {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleInputEmail1">ಇಮೇಲ್ ವಿಳಾಸ</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" name="emailLogin_kn" aria-describedby="emailHelp" required>
+    <small id="emailHelp" class="form-text text-muted">ನಾವು ನಿಮ್ಮ ಇಮೇಲ್ ಅನ್ನು ಬೇರೆಯವರೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳುವುದಿಲ್ಲ.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">ಗುಪ್ತಪದ</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" name="passLogin_kn" required>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">ಲಾಗಿನ್ ಮಾಡಿ</button>
+             <br>
+             <br>
+             
+             <p style="color:black;">ನಿಮಗೆ ಖಾತೆ ಇಲ್ಲದಿದ್ದರೆ ಸೈನ್‌ಅಪ್ ಕ್ಲಿಕ್ ಮಾಡಿ.</p>
+</form>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">ಮುಚ್ಚಿ</button>
+        <a type="button" href="/kn/signUp/" class="btn btn-primary">ಸೈನ್ ಅಪ್ ಮಾಡಿ</a>
+         
+      </div>
+    </div>
+  </div>
+</div>
+    </nav>
+    <br><br><br>
+    <div class="dropdown" align="right">
+        <button class="btn btn-secondary dropdown-toggle" type="button" style="background-color:transparent;" id="dropdownMenu2" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            ಭಾಷೆ:
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <a href ="http://127.0.0.1:8000/" class="dropdown-item" type="button">English</a>
+            <a href="/hi/" class="dropdown-item" type="button">हिन्दी</a>
+            <a class="dropdown-item" type="button" href="/mr/">मराठी</a>
+            <button class="dropdown-item" type="button" >ಕನ್ನಡ</button>
+        </div>
+    </div>
+    
+    
+
+    <h1 class="text-center" style="font-family:montserrat;color:white">ಭಾರತವನ್ನು ಮತ್ತೆ ಗ್ರೇಟ್ ಮಾಡೋಣ</h1>
+    <br><br>
+
+    
+    
+
+    <br><br><br>
+    <div class="container" align="center">
+    
+        <div class="row">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="{% static 'stocks.jpeg' %}" alt="Card image cap">
+                    <div class="card-body" align="middle">
+                        <h5 class="card-title">ನಮ್ಮ ಆರ್ಥಿಕತೆಯನ್ನು ಚೇತರಿಸಿಕೊಳ್ಳೋಣ</h5>
+                        <p class="card-text"style="color:black;">COVID-19 ಆರ್ಥಿಕತೆಯನ್ನು ತುಂಬಾ ಕಠಿಣಗೊಳಿಸಿದೆ, ಅದನ್ನು ಮತ್ತೆ ಸರಿಯಾಗಿ ಮಾಡೋಣ.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card" style="width: 18rem;height:22.8rem;">
+                 <img class="card-img-top" src="{% static 'wash_hand.jpeg' %}" alt="Card image cap">
+                    <div class="card-body" align="middle">
+                        <h5 class="card-title">ನಿಮ್ಮ ಕೈ ತೊಳೆಯಿರಿ</h5>
+                        <p class="card-text" style="color:black;" >ನಿಮ್ಮ ಕೈಯನ್ನು ಸೋಪ್ ಅಥವಾ ಲಿಕ್ವಿಡ್ ಸೋಪ್ ನಿಂದ 20 ಸೆಕೆಂಡುಗಳ ಕಾಲ ತೊಳೆಯಿರಿ ಅಥವಾ ನಿಮ್ಮ ಕೈಯನ್ನು ಸ್ವಚ್ it ಗೊಳಿಸಿ. </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="alert alert-primary" role="alert" align='center'>
+ ಭಾರತದಲ್ಲಿ COVID-19 ಪ್ರಕರಣಗಳನ್ನು ದೃ med ಪಡಿಸಲಾಗಿದೆ: 2.7 Cr
++2,22,000
+</div>
+<div class="alert alert-success" role="alert" align='center'>
+  ಚೇತರಿಕೆ: 2.37 Cr +3,03,000
+</div>
+<div class="alert alert-danger" role="alert" align='center'>
+  ಸಾವು: 3,04,000
++4,454
+</div>
+        
+    
+
+    <!-- Footer -->
+<br><br><br><br>
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3" style="color:white">© 2020 Copyright:
+            <a href="#"> virusbaba.com</a>
+        </div>
+        <!-- Copyright -->
+
+
+    <!-- Footer -->
+    <p translate="yes" style="font-family:montserrat;color:white;" align="center">ಅಪ್ಲಿಕೇಶನ್ ಅಭಿವೃದ್ಧಿಪಡಿಸಿದೆ: ನಿಲೇಶ್ .ಡಿ. ಓಹೋಲ್</p>
+{% endblock %}
+</body>
+</html>

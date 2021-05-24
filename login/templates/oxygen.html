@@ -1,0 +1,1461 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Login in Virus Baba</title>
+
+  </head>
+
+  <body>
+    {% block content %}
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent;">
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'logo.png' %}" width="40%" alt=""></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" style="background-color:#D0D3D4;"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#" style="color:white">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticAbout">About</a>
+          </li>
+          <!--Modal for About-->
+          <div class="modal fade" id="staticAbout" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">About:</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img src={% static 'logob.png' %} />
+                  <p style="color:black;">Virus Baba is an Application which Enables the Impossible to Test 1.3 Billion Indians possible. This application Promotes Social Distancing and Testin of COVID-19 with ease. Depending upon the Questionnaires you Answer it Suggests you Susceptible Score of COVID-19 and Helps you book an Appointment in your Nearest Test Centres. </p>
+                </div>
+                <div class="modal-footer">
+                 <button type="button" class="btn btn-primary" data-dismiss="modal">Understood</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticContact">Contact</a>
+          </li>
+          <!--Modal for Contact-->
+          <div class="modal fade" id="staticContact" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">Contact:</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <img src={% static 'logob.png' %} />
+                  <p style="color:black;" align="center">Application Developed by: Nilesh .D. Ohol </p>
+                  <p style="color:black;">Email ID: <a href="">nileshohol@live.in</a></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Understood</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <li class="nav-item">
+            <a class="nav-link" href="/stat/" style="color:white" >Statistics</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/blood/" style="color:white" >Blood Donation &amp Requirement</a>
+          </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/oxygen/" style="color:white" >Oxygen Requirement</a>
+          </li>
+        </ul>
+      </div>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <a type="button" style="font-family:montserrat;color:white;" data-toggle="modal" data-target="#staticLogin">Login/Sign Up</a>
+      </div>
+      <!--Modal for Login-->
+      <div class="modal fade" id="staticLogin" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalScrollableTitle">Login:</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form action="/profile/" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" name="emailLogin" aria-describedby="emailHelp">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" name="passLogin">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Login</button>
+                <br>
+                <br>
+
+                <p style="color:black;"> If you dont have an Account Click on SignUp.</p>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <a type="button" href="/signUp/" class="btn btn-primary">Sign Up</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+    </nav>
+<a class="weatherwidget-io" href="https://forecast7.com/en/20d5978d96/india/" data-label_1="INDIA" data-label_2="WEATHER" data-font="Open Sans" data-icons="Climacons Animated" data-textcolor="#ffffff" >INDIA WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+    <br><br><br>
+<!--;margin-left:auto;margin-right:auto-->
+
+    <h1 class="text-center" style="font-family:montserrat;color:white">Oxygen Requirements</h1>
+    <br><br>
+
+
+    <style>
+    body{
+        background-color:black;
+        font-family:montserrat;
+    }
+    #map { 
+    width: 100%; 
+    height: 600px; 
+    background-color: grey; 
+  }
+    </style>
+    <br><br><br><br><br>
+
+    <div class="card" style="width:90% ;margin-right:auto;margin-left:auto;">
+  <div id="map"></div> 
+  <div class="card-body">
+      <h5 class="card-title"><strong>Oxygen Requirements:</strong></h5>
+    <!--<p class="card-text">You will be adding markers to this Map using Js.</p>-->
+    <p class="card-text" style="color:black;">Click on the Marker to see the Oxygen Availability.</p>
+    <!--<p class="card-text"><strong>Note: Incase if you have any doubts/issue: <a href="tel:+91-9145702469">Call Me</a></strong></p>-->
+    
+  </div>
+</div>
+<script>
+ let map;
+ //========Add latitude and Longitude Here============//
+ var viva = {lat:19.397266, lng:72.839331};
+var maha = {lat:19.11338534124112, lng:72.85112469824563};
+var saroj = {lat:19.078124890299616, lng:72.91150715785103};
+var aum = {lat:19.165139557496907, lng:72.8452263925272};
+var oxi = {lat:19.055648694641416, lng:72.95067899626817};
+var prana = {lat:19.2291851068103, lng:72.83838349252717};
+var syn = {lat:18.952997683606906, lng:72.8184143465213};
+var pan = {lat:19.09302269164758, lng:72.90101889070367};
+var zeal = {lat:19.166125243294278, lng:72.84320107536062};
+var san = {lat:19.25418140292141, lng:72.85821798885397};
+var life = {lat:19.173408762193358, lng:72.83552511954089};
+var heal = {lat:19.116733805087357, lng:72.83887763117978};
+var med = {lat:19.110420538454676, lng:72.88883560419578};
+var sha = { lat:19.20478889064517, lng:72.83781287536122};
+var wow = {lat:19.10971413932123, lng:72.82984203488387};
+var oxy = {lat:19.015735167593686, lng:72.81760567535834};
+var clu = {lat:19.115314285189704, lng:72.86130137350773};
+var kan = {lat:19.06018395934919, lng:72.88514394837502};
+var nir = {lat:19.08496543052479, lng:72.8383532465233};
+var sam = {lat:19.230017142424362, lng:72.86072361954166};
+var sai = {lat:19.104178056327815, lng:72.89615763303168};
+var dee = {lat:18.94792419949317, lng:72.82976221953733};
+var mede = { lat:19.118614754256047, lng:72.85091777721212};
+var wou = {lat:19.163956975564986, lng:72.84559293303272};
+var medi = {lat:19.076257277037463, lng:72.87672806371941};
+var jup = { lat:19.07440130194594, lng:72.90815557350703};
+var medir = {lat:19.16198494394213, lng:72.94218958885256};
+var reh = {lat:19.334031508819926, lng:73.07015238688842};
+var shi = {lat:19.28348579713584, lng:73.40248877937105};
+var rai = {lat:18.82137707248825, lng:73.34481057652667};
+var kum = {lat:18.86077395138385, lng:73.31457437910063};
+var evr = {lat:19.171078613431614, lng:72.81194989462622};
+
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: {lat:19.10971413932123, lng:72.82984203488387},
+    
+          zoom: 10,
+        });
+        
+
+          
+        
+        //==========================================================Format=====================================================================//
+
+        //var markerN = new google.maps.Marker({     
+        //  position: VARIABLE NAME HERE Eg. viva,
+        //  map: map,
+        //  title: 'NAME OF THE PLACE',
+        //  animation: google.maps.Animation.BOUNCE
+        //});
+    
+    //var contentStringN = '<div id="content">'+
+        //    '<div id="siteNotice">'+
+        //    '</div>'+
+        //    '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>NAME OF THE PLACE</strong></h4>'+
+        //    '<div id="bodyContent">'+
+        //    '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+         //   '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">2500</h5>'+
+        //'<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        //'<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:tELEPHONE NUMBER">+91-9XXXXXXXX</a></h5>'+
+        //    '</div>'+
+        //    '</div>';
+
+        //var infowindowN = new google.maps.InfoWindow({
+        //  content: contentString1
+        //});
+
+       
+        //markerN.addListener('click', function() {
+        //  infowindow1.open(map, markerN);
+        //});
+    
+    //markerN.addListener('dblclick', function() {
+        //   document.getElementById("staticLocation").value = markerN['title'];
+        //});
+
+        //======================================================Example of markers============================================================//
+        var marker1 = new google.maps.Marker({
+          position: viva,
+          map: map,
+          title: 'Viva Institute of Pharmacy,Shirgaon, Veer Sawarkar Road, Virar (East), Vasai, Thane, Maharashtra 401303.',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString1 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Viva Institute of Technology,Vasai, Mumbai</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">250</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">30</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow1 = new google.maps.InfoWindow({
+          content: contentString1
+        });
+
+       
+        marker1.addListener('click', function() {
+          infowindow1.open(map, marker1);
+        });
+    
+    marker1.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker1['title'];
+        });
+
+        // mark 2
+
+        var marker2 = new google.maps.Marker({
+          position: maha,
+          map: map,
+          title: 'Maharashtra Health Care, shop no 2 kol dongri street number 1, near shiwaji chowk, opp. Omkareshwar mandir, Andheri East, Mumbai, Maharashtra 400069',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString2 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Maharashtra Health Care, shop no 2 kol dongri street number 1, near shiwaji chowk, opp. Omkareshwar mandir</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">600</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+918080106018">tel: +918080106018</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow2 = new google.maps.InfoWindow({
+          content: contentString2
+        });
+
+       
+        marker2.addListener('click', function() {
+          infowindow2.open(map, marker2);
+        });
+    
+    marker2.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker2['title'];
+        });
+
+        // Marker 3
+
+        var marker3 = new google.maps.Marker({
+          position: saroj,
+          map: map,
+          title: 'Saroj Medical Gases Pvt Ltd',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString3 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Saroj Medical Gases Pvt Ltd Sri Sati Krupa Shopping Center, 31, Garodia Nagar, Ghatkopar East, Mumbai, Maharashtra 400077</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">100</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">40</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+91-9XXXXXXXX">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow3 = new google.maps.InfoWindow({
+          content: contentString3
+        });
+
+       
+        marker3.addListener('click', function() {
+          infowindow3.open(map, marker3);
+        });
+    
+    marker3.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker3['title'];
+        });
+
+        // Marker 4 
+
+        var marker4 = new google.maps.Marker({
+          position: aum,
+          map: map,
+          title: 'AUM HYPERBARIC OXYGEN THERAPY CENTRE HBOT',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString4 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>AUM HYPERBARIC OXYGEN THERAPY CENTRE HBOT , 106 , Asmi Dreamz , Junction of S.V.Road & M.G.Road Next to Physio lounge Diagno Lounge, Goregaon West, Mumbai, Maharashtra 400104</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">800</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+917777090855">+91-+917777090855</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow4 = new google.maps.InfoWindow({
+          content: contentString4
+        });
+
+       
+        marker4.addListener('click', function() {
+          infowindow4.open(map, marker4);
+        });
+    
+    marker4.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker4['title'];
+        });
+        
+        // Marker 5 
+
+        var marker5 = new google.maps.Marker({
+          position: oxi,
+          map: map,
+          title: 'Oxigen Wallet , 28-29, Johnson Marg, Cheeta Camp, Sector F, Trombay, Mumbai, Maharashtra 400088',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString5 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Oxigen Wallet , 28-29, Johnson Marg, Cheeta Camp, Sector F, Trombay, Mumbai, Maharashtra 400088</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">900</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">400</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912228688884">+912228688884</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow5 = new google.maps.InfoWindow({
+          content: contentString5
+        });
+
+       
+        marker5.addListener('click', function() {
+          infowindow5.open(map, marker5);
+        });
+    
+    marker5.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker5['title'];
+        });
+
+        // Marker 6
+
+        var marker6 = new google.maps.Marker({
+          position: prana,
+          map: map,
+          title: 'Prana Hyperbaric Oxygen Therapy Center ',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString6 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Prana Hyperbaric Oxygen Therapy Center  ,  Prathmesh Leela Building, 6 & 7, near Sailee Hospital, New MHB Colony, Ashtavinayak Nagar, Borivali West, Mumbai, Maharashtra 400092</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">3500</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912228688884">+912228688884</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow6 = new google.maps.InfoWindow({
+          content: contentString6
+        });
+
+       
+        marker6.addListener('click', function() {
+          infowindow6.open(map, marker6);
+        });
+    
+    marker6.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker6['title'];
+        });
+
+        //Marker 7 
+
+        var marker7 = new google.maps.Marker({
+          position: syn,
+          map: map,
+          title: 'Synergy HealthPoint hyperbaric oxygen therapy',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString7 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Synergy HealthPoint hyperbaric oxygen therapy , 311 mehta bhavan ,1 st floor room no 108, near Hinduja College, Mumbai, Maharashtra 400004, </strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">4400</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">2000</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+919819559990">+919819559990</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow7 = new google.maps.InfoWindow({
+          content: contentString7
+        });
+
+       
+        marker7.addListener('click', function() {
+          infowindow7.open(map, marker7);
+        });
+    
+    marker7.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker7['title'];
+        });
+
+        // Marker 8 
+
+        var marker8 = new google.maps.Marker({
+          position: pan,
+          map: map,
+          title: 'Pancholi BioMedical Services - PBMS',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString8 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Pancholi BioMedical Services - PBMS ,  204,Shalimar Apt, New, Maneklal Estate, Ghatkopar West, Mumbai, Maharashtra 400084</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">3000</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel: +919820680932"> +919820680932</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow8 = new google.maps.InfoWindow({
+          content: contentString8
+        });
+
+       
+        marker8.addListener('click', function() {
+          infowindow8.open(map, marker8);
+        });
+    
+    marker8.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker8['title'];
+        });
+
+      // Marker 9 
+
+      var marker9 = new google.maps.Marker({
+          position: zeal,
+          map: map,
+          title: 'Zeal Medical - Medical Equipment Products ',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString9 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong> Zeal Medical Pvt. Ltd., 4/19 A, Piramal Industrial Estate, S.V.Road, Goregaon (West),, Mumbai, Maharashtra 400062  </strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">1000</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">500</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:,  +912240953456  ">,  +912240953456  </a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow9 = new google.maps.InfoWindow({
+          content: contentString9
+        });
+
+       
+        marker9.addListener('click', function() {
+          infowindow9.open(map, marker9);
+        });
+    
+    marker9.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker9['title'];
+        });
+
+        //Marker 10
+
+        var marker10 = new google.maps.Marker({
+          position: san,
+          map: map,
+          title: 'Sanrai Med India Pvt Ltd (Mumbai Branch) CPAP & BIPAP Machine Supplier',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString10 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Sanrai Med India Pvt Ltdi, Dahisar West, Mumbai, Maharashtra 400068</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">600</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+919004053268">+919004053268</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow10 = new google.maps.InfoWindow({
+          content: contentString10
+        });
+
+       
+        marker10.addListener('click', function() {
+          infowindow10.open(map, marker10);
+        });
+    
+    marker10.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker10['title'];
+        });
+
+        // Marker 11
+
+        var marker11 = new google.maps.Marker({
+          position: life,
+          map: map,
+          title: 'Lifenine Medical Oxygen',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString11 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Lifenine Medical Oxygen ,  No 2, New Link Rd, Malad, Reserve Bank of India Staff Quarters, Raheja Twp, Malad West, Mumbai, Maharashtra 400064  </strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">4500</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">498</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow11 = new google.maps.InfoWindow({
+          content: contentString11
+        });
+
+       
+        marker11.addListener('click', function() {
+          infowindow11.open(map, marker11);
+        });
+    
+    marker11.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker11['title'];
+        });
+
+        // Marker 12
+
+        var marker12 = new google.maps.Marker({
+          position: heal,
+          map: map,
+          title: 'The Health Store',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString12 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>The Health Store</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">10000</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow12 = new google.maps.InfoWindow({
+          content: contentString12
+        });
+
+       
+        marker12.addListener('click', function() {
+          infowindow12.open(map, marker12);
+        });
+    
+    marker12.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker12['title'];
+        });
+
+        // Marker 13
+
+        var marker13 = new google.maps.Marker({
+          position: san,
+          map: map,
+          title: 'Sanghi Oxygen Bombay Private Limited',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString13 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Sanghi Oxygen Bombay Private Limited , Mani Mahal, 11/21, Mathew Rd, Opera House, Girgaon, Mumbai, Maharashtra 400004</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">9800</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">90</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912223634854">+912223634854</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow13 = new google.maps.InfoWindow({
+          content: contentString13
+        });
+
+       
+        marker13.addListener('click', function() {
+          infowindow13.open(map, marker13);
+        });
+    
+    marker13.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker13['title'];
+        });
+
+        // Marker 14 
+
+        var marker14 = new google.maps.Marker({
+          position: med,
+          map: map,
+          title: 'MediKart',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString14 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>MediKart , Hyde Park, MediKart, D-106, Ansa Industrial Estate, Saki Vihar road, Saki Naka, Opp, Andheri East, Mumbai, Maharashtra 400072</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">300</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow14 = new google.maps.InfoWindow({
+          content: contentString14
+        });
+
+       
+        marker14.addListener('click', function() {
+          infowindow14.open(map, marker14);
+        });
+    
+    marker14.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker14['title'];
+        });
+
+        //  Marker 15
+
+        var marker15 = new google.maps.Marker({
+          position: sha,
+          map: map,
+          title: 'Shah Brothers Oxygen & Home Healthcare LLP',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString15 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Shah Brothers Oxygen & Home Healthcare LLP , Gala No. 3, Keshav Industrial Estate, Off M. G Road Near Dhanukarwadi , Chhatrapati Shivaji Rd, near Thakur International School, opposite Rajaram Bldg, Kandivali West, Mumbai, Maharashtra 400067</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">1500</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">678</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow15 = new google.maps.InfoWindow({
+          content: contentString15
+        });
+
+       
+        marker15.addListener('click', function() {
+          infowindow15.open(map, marker15);
+        });
+    
+    marker15.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker15['title'];
+        });
+
+        // Marker 16
+
+        var marker16 = new google.maps.Marker({
+          position: wow,
+          map: map,
+          title: 'WOW COSMETOLOGY CENTER',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString16 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>WOW COSMETOLOGY CENTER , MAPLE BLDG.,4, 10th Rd, opp. कोटक महिन्द्रा बैंक, Vitthal Nagar Society, Juhu, Mumbai, Maharashtra 400049</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">7500</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow16 = new google.maps.InfoWindow({
+          content: contentString16
+        });
+
+       
+        marker16.addListener('click', function() {
+          infowindow16.open(map, marker16);
+        });
+    
+    marker16.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker16['title'];
+        });
+
+        // Marker 17
+
+        var marker17 = new google.maps.Marker({
+          position: oxy,
+          map: map,
+          title: 'Oxygen Healthcare Communications O2 ',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString17 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Oxygen Healthcare Communications O2 ,  Seagull Villa, Sir Abdul Gaffar Khan Road,, Worli Sea Face,, opp. Indian Coast Guard, Mumbai, Maharashtra 400030</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">800</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">105</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow17 = new google.maps.InfoWindow({
+          content: contentString17
+        });
+
+       
+        marker17.addListener('click', function() {
+          infowindow17.open(map, marker17);
+        });
+    
+    marker17.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker17['title'];
+        });
+
+        // Marker 18 
+
+        var marker18 = new google.maps.Marker({
+          position: clu,
+          map: map,
+          title: 'Club Oxygen',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString18 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Club Oxygen , 507/508, Kanakia Wall Street, Andheri East, Mumbai, Maharashtra 400093  </strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">598</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow18 = new google.maps.InfoWindow({
+          content: contentString18
+        });
+
+       
+        marker18.addListener('click', function() {
+          infowindow18.open(map, marker18);
+        });
+    
+    marker18.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker18['title'];
+        });
+
+        // Marker 19
+
+        var marker19 = new google.maps.Marker({
+          position: kan,
+          map: map,
+          title: 'Kanchans House Of Health & Nutrition',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString19 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Kanchans House Of Health & Nutrition , 40, SG Barve Marg, Kamgaar Nagar, Kurla, Mumbai, Maharashtra 400024 </strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">674</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">98</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow19 = new google.maps.InfoWindow({
+          content: contentString19
+        });
+
+       
+        marker19.addListener('click', function() {
+          infowindow19.open(map, marker19);
+        });
+    
+    marker19.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker19['title'];
+        });
+
+        // Marker 20
+
+        var marker20= new google.maps.Marker({
+          position: nir,
+          map: map,
+          title: 'Nirved Breathing Solutions',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString20 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Nirved Breathing Solutions , A/405, Sangam, Corner of Swami Vivekanand Road and Saibaba Road, Opposite Surya Hospital, Santacruz West, above Kotak Mahindra Bank, Mumbai, Maharashtra 400054 </strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">1974</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow20 = new google.maps.InfoWindow({
+          content: contentString20
+        });
+
+       
+        marker20.addListener('click', function() {
+          infowindow20.open(map, marker20);
+        });
+    
+    marker20.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker20['title'];
+        });
+
+        // Marker 21
+
+        var marker21 = new google.maps.Marker({
+          position: sam,
+          map: map,
+          title: 'Sambhaji Medical & General Store',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString21 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Sambhaji Medical & General Store , Shop No.3,S.B.Apartment.5th, Main Carter Rd, Borivali East, Mumbai, Maharashtra 400066</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">902</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">78</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow21 = new google.maps.InfoWindow({
+          content: contentString21
+        });
+
+       
+        marker21.addListener('click', function() {
+          infowindow21.open(map, marker21);
+        });
+    
+    marker21.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker21['title'];
+        });
+
+        // Marker 22
+
+        var marker22= new google.maps.Marker({
+          position: sai,
+          map: map,
+          title: 'Sai Oxygen Corporation',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString22 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Sai Oxygen Corporation  ,  Shop No.4, Nav Durga Compound, Sakinaka, Khairani Rd, Pereira Wadi, Asalpha, Mumbai, Maharashtra 400072</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">489</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912228505613  ">+912228505613  </a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow22 = new google.maps.InfoWindow({
+          content: contentString22
+        });
+
+       
+        marker22.addListener('click', function() {
+          infowindow22.open(map, marker22);
+        });
+    
+    marker22.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker22['title'];
+        });
+
+        // Marker 23
+
+        var marker23= new google.maps.Marker({
+          position: dee,
+          map: map,
+          title: 'Deepak Surgical ',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString23 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Deepak Surgical  ,  Princess Street, 52/58/16, Babu Genu Rd, Narottam Wadi, Kalbadevi, Mumbai, Maharashtra 400002  </strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">679</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">89</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912222017351">+912222017351</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow23 = new google.maps.InfoWindow({
+          content: contentString23
+        });
+
+       
+        marker23.addListener('click', function() {
+          infowindow23.open(map, marker23);
+        });
+    
+    marker23.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker23['title'];
+        });
+
+        //  Marker 24
+
+        var marker24= new google.maps.Marker({
+          position: mede,
+          map: map,
+          title: 'MEDITECH HEALTHCARE',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString24 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>MEDITECH HEALTHCARE  , 1 KANTIMAHAL CHSL, Teli Gali, Andheri East, Mumbai, Maharashtra</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">387</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+918048736513">+918048736513</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow24 = new google.maps.InfoWindow({
+          content: contentString24
+        });
+
+       
+        marker24.addListener('click', function() {
+          infowindow24.open(map, marker24);
+        });
+    
+    marker24.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker24['title'];
+        });
+
+        // Marker 25
+
+        var marker25= new google.maps.Marker({
+          position: wou,
+          map: map,
+          title: 'Wound and Vein Advanced Clinic - Hyperbaric Oxygen Therapy (HBOT) ',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString25 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Wound and Vein Advanced Clinic - Hyperbaric Oxygen Therapy (HBOT) ,  106 Asmi Dreamz, Junction of S.V.Road, &, Mahatma Gandhi Rd, opposite Ratna Hotel, Unnat Nagar 2, Goregaon West, Mumbai, Maharashtra 400062</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">2856</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">75</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+917777090855 ">+917777090855 </a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow25 = new google.maps.InfoWindow({
+          content: contentString25
+        });
+
+       
+        marker25.addListener('click', function() {
+          infowindow25.open(map, marker25);
+        });
+    
+    marker25.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker25['title'];
+        });
+
+        //  marker 26
+
+        var marker26= new google.maps.Marker({
+          position: medi,
+          map: map,
+          title: 'Medicare Diagnostic Centre',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString26 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Viva Institute of Technology,Vasai, Mumbai</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">487</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow26 = new google.maps.InfoWindow({
+          content: contentString26
+        });
+
+       
+        marker26.addListener('click', function() {
+          infowindow26.open(map, marker26);
+        });
+    
+    marker26.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker26['title'];
+        });
+
+        // Marker 27
+
+        var marker27= new google.maps.Marker({
+          position: jup,
+          map: map,
+          title: 'Jupiter Equipment',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString27 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Jupiter Equipment , Garodia Shopping Centre 149/156 Ground Floor, behind Union Bank of India, Garodia Nagar, Ghatkopar East, Mumbai, Maharashtra 400077 </strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">583</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">464</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+919619381829">+919619381829</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow27 = new google.maps.InfoWindow({
+          content: contentString27
+        });
+
+       
+        marker27.addListener('click', function() {
+          infowindow27.open(map, marker27);
+        });
+    
+    marker27.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker27['title'];
+        });
+
+        // Marker 28 
+
+        var marker28= new google.maps.Marker({
+          position: medir,
+          map: map,
+          title: 'Medirent Services Pvt Ltd',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString28 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Medirent Services Pvt Ltd , Fortis, Nahur West, Industrial Area, Mulund West, Mumbai, Maharashtra 400078</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">458</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+919911213604">+919911213604</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow28 = new google.maps.InfoWindow({
+          content: contentString28
+        });
+
+       
+        marker28.addListener('click', function() {
+          infowindow28.open(map, marker28);
+        });
+    
+    marker28.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker28['title'];
+        });
+
+        //  Marker 29 
+
+        var marker29= new google.maps.Marker({
+          position: reh,
+          map: map,
+          title: 'Rehan oxygen',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString29 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Rehan oxygen, G/27 blg 2 near mamta hospital shamdar market, Bhiwandi, Maharashtra</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">4004</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">82</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+918983552679">+918983552679</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow29 = new google.maps.InfoWindow({
+          content: contentString29
+        });
+
+       
+        marker29.addListener('click', function() {
+          infowindow29.open(map, marker29);
+        });
+    
+    marker29.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker29['title'];
+        });
+
+        // Marker 30 
+
+        var marker30= new google.maps.Marker({
+          position: shi,
+          map: map,
+          title: 'Shivam Oxygen Pvt. Ltd.',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString30 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Shivam Oxygen Pvt. Ltd., Plot number 577, Nadai, Murbad, Maharashtra 421401</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">2650</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+919422251556">+919422251556</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow30 = new google.maps.InfoWindow({
+          content: contentString30
+        });
+
+       
+        marker30.addListener('click', function() {
+          infowindow30.open(map, marker30);
+        });
+    
+    marker30.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker30['title'];
+        });
+
+        // Marker 31
+
+        var marker31= new google.maps.Marker({
+          position: rai,
+          map: map,
+          title: 'Raigad Oxygen Pvt. Ltd.',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString31 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Raigad Oxygen Pvt. Ltd., Indira Nagar, Laxminagar, Khopoli, Maharashtra 410203</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">954</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">87</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow31 = new google.maps.InfoWindow({
+          content: contentString31
+        });
+
+       
+        marker31.addListener('click', function() {
+          infowindow31.open(map, marker31);
+        });
+    
+    marker31.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker31['title'];
+        });
+
+        // marker 32
+
+        var marker32= new google.maps.Marker({
+          position: kum,
+          map: map,
+          title: 'Kumar gases khopoli',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString32 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Pen - Khopoli Rd, near risivan Resort, Yashwant Nagar, Khopoli, Maharashtra 410203</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">743</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow32 = new google.maps.InfoWindow({
+          content: contentString32
+        });
+
+       
+        marker32.addListener('click', function() {
+          infowindow32.open(map, marker32);
+        });
+    
+    marker32.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker32['title'];
+        });
+
+        // Marker 33 
+
+        var marker33= new google.maps.Marker({
+          position: evr,
+          map: map,
+          title: 'Evron Biocraft Pvt. Ltd',
+          animation: google.maps.Animation.BOUNCE
+        });
+    
+    var contentString33 = '<div id="content">'+
+            '<div id="siteNotice">'+
+            '</div>'+
+            '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Evron Biocraft Pvt. Ltd, ground floor, B-11, ISKCON temple, Chand Society, Juhu, Mumbai, Maharashtra 400049</strong></h4>'+
+            '<div id="bodyContent">'+
+            '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:green;font-family:montserrat;">Available</h5>'+
+            '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">737</h5>'+
+        '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:green;font-family:montserrat;">38</h5>'+
+        '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:+912226255501">+912226255501</a></h5>'+
+            '</div>'+
+            '</div>';
+
+        var infowindow33 = new google.maps.InfoWindow({
+          content: contentString33
+        });
+
+       
+        marker33.addListener('click', function() {
+          infowindow33.open(map, marker33);
+        });
+    
+    marker33.addListener('dblclick', function() {
+           document.getElementById("staticLocation").value = marker33['title'];
+        });
+
+    //     // Marker 34 
+
+    //     var marker34 = new google.maps.Marker({
+    //       position: viva,
+    //       map: map,
+    //       title: 'Viva Institute of Pharmacy,Shirgaon, Veer Sawarkar Road, Virar (East), Vasai, Thane, Maharashtra 401303.',
+    //       animation: google.maps.Animation.BOUNCE
+    //     });
+    
+    // var contentString34 = '<div id="content">'+
+    //         '<div id="siteNotice">'+
+    //         '</div>'+
+    //         '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Viva Institute of Technology,Vasai, Mumbai</strong></h4>'+
+    //         '<div id="bodyContent">'+
+    //         '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+    //         '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">2500</h5>'+
+    //     '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+    //     '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+    //         '</div>'+
+    //         '</div>';
+
+    //     var infowindow34 = new google.maps.InfoWindow({
+    //       content: contentString34
+    //     });
+
+       
+    //     marker34.addListener('click', function() {
+    //       infowindow34.open(map, marker34);
+    //     });
+    
+    // marker34.addListener('dblclick', function() {
+    //        document.getElementById("staticLocation").value = marker34['title'];
+    //     });
+
+    //     //  Marker 35 
+
+    //     var marker35= new google.maps.Marker({
+    //       position: viva,
+    //       map: map,
+    //       title: 'Viva Institute of Pharmacy,Shirgaon, Veer Sawarkar Road, Virar (East), Vasai, Thane, Maharashtra 401303.',
+    //       animation: google.maps.Animation.BOUNCE
+    //     });
+    
+    // var contentString35 = '<div id="content">'+
+    //         '<div id="siteNotice">'+
+    //         '</div>'+
+    //         '<h4 id="firstHeading" class="firstHeading" style="font-family:montserrat;"><strong>Viva Institute of Technology,Vasai, Mumbai</strong></h4>'+
+    //         '<div id="bodyContent">'+
+    //         '<h5 style="font-family:montserrat;">Status: </h5>'+'<h5 style="color:red;font-family:montserrat;">Unavailable</h5>'+
+    //         '<h5 style="font-family:montserrat;">Total Bookings:</h5>'+'<h5 style="color:green;font-family:montserrat;">2500</h5>'+
+    //     '<h5 style="font-family:montserrat;">Available Booking</h5>'+'<h5 style="color:red;font-family:montserrat;">0</h5>'+
+    //     '<h5 style="font-family:montserrat;">Contact No.: </h5>'+'<h5><a style="font-family:montserrat;" href="tel:9145702469">+91-9XXXXXXXX</a></h5>'+
+    //         '</div>'+
+    //         '</div>';
+
+    //     var infowindow35 = new google.maps.InfoWindow({
+    //       content: contentString35
+    //     });
+
+       
+    //     marker35.addListener('click', function() {
+    //       infowindow30.open(map, marker35);
+    //     });
+    
+    // marker35.addListener('dblclick', function() {
+    //        document.getElementById("staticLocation").value = marker35['title'];
+    //     });
+        //====================================================================================================================================//
+      }
+
+
+</script>
+
+
+
+
+    <!-- Footer -->
+    <br><br><br><br>
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="color:white">© 2020 Copyright:
+      <a href="#"> virusbaba.com</a>
+    </div>
+    <!-- Copyright -->
+
+
+    <!-- Footer -->
+    <p translate="yes" style="font-family:montserrat;color:white;" align="center">Application Developed by: Nilesh Ohol.</p>
+    {% endblock %}
+    
+  </body>
+
+</html>

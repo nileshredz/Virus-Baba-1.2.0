@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<head>
+
+</head>
+<body>
+{%block content%}
+     <div class="logout">
+    <button type="button" class="btn btn-dark" style="background:transparent;font-family:montserrat; position: absolute;right: 100px;top: 50px;" onClick="location.href='{% url 'log_hi' %}'">लॉग आउट</button>
+
+    </div>
+<br><br><br><br><br><br><br>
+<div class="card text-white bg-success mb-3" style="width:60rem;margin-left:auto;margin-right:auto;">
+  <div class="card-header" style="font-family:montserrat;font-size:35px;">पंजीकरण सफल</div>
+  <div class="card-body">
+    <h5 class="card-title">COVID 19 के खिलाफ लड़ाई के लिए आपके मूल्यवान योगदान के लिए धन्यवाद ।</h5>
+    <h5>आप पंजीकरण और क्यूआर कोड के साथ एक ई-मेल और एसएमएस प्राप्त करेंगे। हम आपके योगदान के लिए अत्यधिक बाध्य हैं।</h5>
+    <p>ईमेल और एसएमएस प्राप्त करने के बाद क्या करना है?</p>
+    <p>चरण 1: दिए गए दिनांक और समय पर परीक्षण केंद्र में उपस्थित रहें।</p>
+    <p>चरण 2: COVID-19 के अधिकारियों को क्यूआर कोड या आईडी प्रदान करें।</p>
+    <p>चरण 3: रोगी बनें, आपको एसएमएस / ईमेल के माध्यम से रिपोर्ट प्राप्त होगी।</p>
+  </div>
+    <div class="modal-footer">
+        <p style="float:left;">यदि आपको संगरोध पर क्लिक करने में सहायता की आवश्यकता है, तो इसे बढ़ाएँ:</p>
+        <a type="button" href="/hi/profile/quarantine/" class="btn btn-primary" data-dismiss="modal">संगरोध के लिए बुकिंग</a> 
+      </div>
+</div> 
+{%endblock%}
+</body>

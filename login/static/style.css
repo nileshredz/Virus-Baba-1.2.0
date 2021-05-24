@@ -1,0 +1,12 @@
+body{
+    background-image: image('background.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p{
+    font-family: montserrat;
+}
+
+
+

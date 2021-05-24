@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<body>
+{% block content %}
+
+
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent;">
+        <a class="navbar-brand" href="#">
+    <img src="{% static 'logo.png' %}" width="40%"  alt=""></a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="background-color:#D0D3D4;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" style="color:white">घर <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticAbout" >के बारे में</a>
+                </li>
+                <!--Modal for About-->
+                <div class="modal fade" id="staticAbout" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">के बारे में:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src={% static 'logob.png' %} />
+        <p style="color:black;">वायरस बाबा एक एप्लीकेशन है जो असंभव को 1.3 बिलियन भारतीयों का परीक्षण करने में सक्षम बनाता है। यह एप्लिकेशन आसानी से COVID-19 के सामाजिक भेद और परीक्षण को बढ़ावा देता है। प्रश्नावली के आधार पर आप इसका उत्तर देते हैं कि आपको COVID-19 का अतिसंवेदनशील स्कोर प्राप्त करने में मदद करता है और आपको अपने निकटतम परीक्षा केंद्रों में नियुक्ति बुक करने में मदद करता है। </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">समझ लिय</button>
+      </div>
+    </div>
+  </div>
+</div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticContact">संपर्क करें</a>
+                </li>
+                <!--Modal for Contact-->
+                <div class="modal fade" id="staticContact" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">संपर्क करें:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src={% static 'logob.png' %} />
+        <p style="color:black;" align="center">द्वारा विकसित अनुप्रयोग: नीलेश .डी.ओहोल </p>
+        <p style="color:black">Email ID: <a href="">nileshohol@live.in</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">समझ लिय</button>
+      </div>
+    </div>
+  </div>
+</div>
+               <li class="nav-item">
+            <a class="nav-link" href="/hi/profile/stat/" style="color:white" >आंकड़े</a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href = "/hi/profile/charity/" style="color:white" >दान</a>
+          </li>
+            
+             <li class="nav-item">
+            <a class="nav-link"href = "/hi/profile/quarantine/" style="color:white" >संगरोध के साथ समर्थन की आवश्यकता है</a>
+          </li>
+            </ul> </div> <br><div class="logout">
+    <button type="button" class="btn btn-dark" style="background:transparent;font-family:montserrat;" onClick="location.href='{% url 'log_hi' %}'">लॉग आउट</button>
+
+    </div>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <p>बुकिंग के लिए स्थान चुनें:</p> 
+    <div id="map"></div> 
+    <script src={% static 'map.js' %} data-toggle="marker"></script>
+    <br><br>
+
+    <div class="card" style="width: 80rem;margin-left:auto;margin-right:auto;">
+  <div class="card-body">
+    <h5 class="card-title">एक अपॉइंटमेंट बुक करें:</h5>
+    <form>
+    <!--Name of the Person-->
+  <div class="form-group row">
+    <label for="staticName" class="col-sm-2 col-form-label">नाम:</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticName" value="Nilesh Ohol">
+    </div>
+  </div>
+  <!--Age of the Person-->
+  <div class="form-group row">
+    <label for="staticAge" class="col-sm-2 col-form-label">आयु:</label>
+    <div class="col-sm-10">
+      <input type="number" readonly class="form-control-plaintext" id="staticAge" value="24">
+    </div>
+  </div>
+  <!--Gender of the Person-->
+  <div class="form-group row">
+    <label for="staticGender" class="col-sm-2 col-form-label">लिंग:</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticGender" value="Male">
+    </div>
+  </div>
+  <!--Email of the Person-->
+  <div class="form-group row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">ईमेल:</label>
+    <div class="col-sm-10">
+      <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="nileshohol@virusbaba.in">
+    </div>
+  </div>
+  <!--Phone Number of the Person-->
+  <div class="form-group row">
+    <label for="staticPhone" class="col-sm-2 col-form-label">फ़ोन:</label>
+    <div class="col-sm-10">
+      <input type="number" readonly class="form-control-plaintext" id="staticPhone" value="9999955522">
+    </div>
+  </div>
+  <!--Test Centres Location-->
+  <div class="form-group row">
+    <label for="inputLocation" class="col-sm-2 col-form-label">परीक्षण केंद्र:</label>
+    <div class="col-sm-10">
+       <input type="text" readonly class="form-control-plaintext" id="staticLocation" value="स्थान चुनने के लिए मार्कर पर क्लिक करें">
+    </div>
+  </div>
+  <!--Date and Time Picker-->
+  <div class="form-group row">
+  <p style="color:black;">नीचे दिनांक और समय चुनें:</p>
+    <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+      <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1"/>
+      <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+        <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+      </div>
+    </div>
+</div>
+</form>
+    <a href="#" class="btn btn-primary"  data-toggle="modal" data-target="#LocationModal">बुकिंग की पुष्टि करें</a>
+    <div class="modal fade" id="LocationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">टेस्ट सेंटर बुक करना</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        क्या आप सुनिश्चित हैं कि आपने अपना वांछित इनपुट दिया है?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">बदली</button>
+        <a type="button" class="btn btn-primary" href="/hi/profile/final/">हाँ</a>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+
+    
+
+
+
+    <!--Footer for the Maps-->
+    <div class="footer-copyright text-center py-3" style="color:white">© 2020 Copyright:
+        <a href="#"> virusbaba.com</a>
+    </div>
+    <!-- Copyright -->
+
+
+    <!-- Footer -->
+    <p translate="yes" style="font-family:montserrat;color:white;" align="center">Application Developed by: Nilesh
+        Ohol.</p>
+    {% endblock %}
+    </body>

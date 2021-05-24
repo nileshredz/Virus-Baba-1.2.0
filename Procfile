@@ -1,0 +1,1 @@
+web: gunicorn VirusBaba.wsgi --log-file -

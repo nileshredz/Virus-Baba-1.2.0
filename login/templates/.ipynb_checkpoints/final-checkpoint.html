@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<head>
+
+</head>
+<body>
+{%block content%}
+    <div class="logout">
+    <button type="button" class="btn btn-dark" style="background:transparent;font-family:montserrat; position: absolute;right: 100px;top: 50px;" onClick="location.href='{% url 'log' %}'">Logout</button>
+
+    </div>
+<br><br><br><br><br><br><br>
+<div class="card text-white bg-success mb-3" style="width:60rem;margin-left:auto;margin-right:auto;">
+  <div class="card-header" style="font-family:montserrat;font-size:35px;">Registration Sucessful</div>
+  <div class="card-body">
+    <h5 class="card-title">Thank you for your Valuable Contribution towards the Fight against COVID_19.</h5>
+    <h5>You will Recieve an E-mail and SMS with the Registration and QR Code We are highly obliged with yor Contribution.</h5>
+    <p>What to do after Recieving the Email and SMS?</p>
+    <p>Step 1: Be Present in the Test center at the given Date and Time.</p>
+    <p>Step 2: Provide the QR Code or ID to the Officials of the COVID-19.</p>
+    <p>Step 3: Be Patient, you will recieve the Report via SMS/E-mail.</p>
+  </div>
+    <div class="modal-footer">
+        <p style="float:left;">Incase if you need Help with Quarantine click on:</p>
+        <a type="button" href="/profile/quarantine/" class="btn btn-primary" data-dismiss="modal">Booking for Quarantine</a> 
+      </div>
+</div>
+   
+{%endblock%}
+</body>

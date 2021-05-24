@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<head>
+
+</head>
+<body>
+{%block content%}
+    <div class="logout">
+    <button type="button" class="btn btn-dark" style="background:transparent;font-family:montserrat; position: absolute;right: 100px;top: 50px;" onClick="location.href='{% url 'log_kn' %}'">ಲಾಗ್ ಔಟ್</button>
+
+    </div>
+<br><br><br><br><br><br><br>
+<div class="card text-white bg-success mb-3" style="width:60rem;margin-left:auto;margin-right:auto;">
+  <div class="card-header" style="font-family:montserrat;font-size:35px;">ನೋಂದಣಿ ಯಶಸ್ವಿಯಾಗಿದೆ</div>
+  <div class="card-body">
+    <h5 class="card-title">COVID_19 ವಿರುದ್ಧದ ಹೋರಾಟಕ್ಕೆ ನಿಮ್ಮ ಅಮೂಲ್ಯ ಕೊಡುಗೆಗಾಗಿ ಧನ್ಯವಾದಗಳು. </ h5>
+    <h5> ನೋಂದಣಿ ಮತ್ತು ಕ್ಯೂಆರ್ ಕೋಡ್‌ನೊಂದಿಗೆ ನೀವು ಇ-ಮೇಲ್ ಮತ್ತು ಎಸ್‌ಎಂಎಸ್ ಸ್ವೀಕರಿಸುತ್ತೀರಿ ನಾವು ನಿಮ್ಮ ಕೊಡುಗೆಯೊಂದಿಗೆ ಹೆಚ್ಚು ನಿರ್ಬಂಧವನ್ನು ಹೊಂದಿದ್ದೇವೆ. </h5>
+    <p> ಇಮೇಲ್ ಮತ್ತು SMS ಸ್ವೀಕರಿಸಿದ ನಂತರ ಏನು ಮಾಡಬೇಕು? </ p>
+    <p> ಹಂತ 1: ನಿರ್ದಿಷ್ಟ ದಿನಾಂಕ ಮತ್ತು ಸಮಯದಲ್ಲಿ ಪರೀಕ್ಷಾ ಕೇಂದ್ರದಲ್ಲಿ ಇರಿ. </ p>
+    <p> ಹಂತ 2: COVID-19 ನ ಅಧಿಕಾರಿಗಳಿಗೆ QR ಕೋಡ್ ಅಥವಾ ID ಅನ್ನು ಒದಗಿಸಿ. </ p>
+    <p> ಹಂತ 3: ತಾಳ್ಮೆಯಿಂದಿರಿ, ನೀವು ಎಸ್‌ಎಂಎಸ್ / ಇ-ಮೇಲ್ ಮೂಲಕ ವರದಿಯನ್ನು ಸ್ವೀಕರಿಸುತ್ತೀರಿ. </ p>
+  </div>
+    <div class="modal-footer">
+        <p style="float:left;">ನಿಮಗೆ ಸಹಾಯದಿಂದ ಸಂಪರ್ಕತಡೆಯನ್ನು ಕ್ಲಿಕ್ ಮಾಡಿ:</p>
+        <a type="button" href="/profile/quarantine/" class="btn btn-primary" data-dismiss="modal">ಮೂಲೆಗುಂಪುಗಾಗಿ ಬುಕಿಂಗ್</a> 
+      </div>
+    
+</div>
+   
+{%endblock%}
+</body>

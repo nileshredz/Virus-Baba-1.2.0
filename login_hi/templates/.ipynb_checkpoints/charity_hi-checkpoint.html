@@ -1,0 +1,217 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Login in Virus Baba</title>
+
+  </head>
+
+  <body>
+    {% block content %}
+
+
+   <nav class="navbar navbar-expand-lg navbar-light" style="background-color: transparent;">
+        <a class="navbar-brand" href="#">
+    <img src="{% static 'logo.png' %}" width="40%"  alt=""></a>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="background-color:#D0D3D4;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#" style="color:white">घर <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticAbout" >के बारे में</a>
+                </li>
+                <!--Modal for About-->
+                <div class="modal fade" id="staticAbout" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">के बारे में:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src={% static 'logob.png' %} />
+        <p style="color:black;">वायरस बाबा एक एप्लीकेशन है जो असंभव को 1.3 बिलियन भारतीयों का परीक्षण करने में सक्षम बनाता है। यह एप्लिकेशन आसानी से COVID-19 के सामाजिक भेद और परीक्षण को बढ़ावा देता है। प्रश्नावली के आधार पर आप इसका उत्तर देते हैं कि आपको COVID-19 का अतिसंवेदनशील स्कोर प्राप्त करने में मदद करता है और आपको अपने निकटतम परीक्षा केंद्रों में नियुक्ति बुक करने में मदद करता है। </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">समझ लिय</button>
+      </div>
+    </div>
+  </div>
+</div>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color:white" data-toggle="modal" data-target="#staticContact">संपर्क करें</a>
+                </li>
+                <!--Modal for Contact-->
+                <div class="modal fade" id="staticContact" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">संपर्क करें:</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src={% static 'logob.png' %} />
+        <p style="color:black;" align="center">द्वारा विकसित अनुप्रयोग: नीलेश .डी.ओहोल </p>
+        <p style="color:black">Email ID: <a href="">nileshohol@live.in</a></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">समझ लिय</button>
+      </div>
+    </div>
+  </div>
+</div>
+               <li class="nav-item">
+            <a class="nav-link" href="/hi/profile/stat/" style="color:white" >आंकड़े</a>
+          </li>
+             <li class="nav-item">
+            <a class="nav-link" href = "/hi/profile/charity/" style="color:white" >दान</a>
+          </li>
+            
+             <li class="nav-item">
+            <a class="nav-link"href = "/hi/profile/quarantine/" style="color:white" >संगरोध के साथ समर्थन की आवश्यकता है</a>
+          </li>
+            </ul> </div> <br><div class="logout">
+    <button type="button" class="btn btn-dark" style="background:transparent;font-family:montserrat;" onClick="location.href='{% url 'log_hi' %}'">लॉग आउट</button>
+
+    </div>
+    </nav>
+    <br>
+<a class="weatherwidget-io" href="https://forecast7.com/en/23d9491d99/tripura/" data-label_1="TRIPURA" data-label_2="WEATHER" data-font="Open Sans" data-icons="Climacons Animated" data-textcolor="#ffffff" >TRIPURA WEATHER</a>
+<script>
+!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+</script>
+    <br><br>
+      <h1 class="text-center" style="font-family:montserrat;color:white">साझा करना ही देखभाल है</h1>
+      <br>
+ <div class = 'container'> 
+<div class="card-columns">
+    <div class="card">
+    <img src="{% static 'PMCARES.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">पीएम केयर्स फंड</h5>
+      <p class="card-text" style='color:black;'>कोविड-19 महामारी जैसी किसी भी तरह की आपातकालीन या संकट की स्थिति से निपटने के प्राथमिक उद्देश्य के साथ एक समर्पित राष्ट्रीय निधि की आवश्यकता को ध्यान में रखते हुए और उससे प्रभावित लोगों को राहत प्रदान करने के लिए ‘आपात स्थितियों में प्रधानमंत्री नागरिक सहायता और राहत कोष (पीएम केयर्स फंड)’ के नाम से एक सार्वजनिक धर्मार्थ ट्रस्ट बनाया गया है।</p>
+        <a href="https://www.pmcares.gov.in/en/" class="card-link">कार्ड लिंक</a>
+        <div>
+         <a href="#" class="btn btn-primary" style='margin-left:auto;' data-toggle="modal" data-target="#exampleModal">अभी दान कीजिए</a>
+        </div>
+        <!--Modal iframe for PMCare-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe src="https://www.pmcares.gov.in/en/web/contribution/donate_india" title="W3Schools Free Online Web Tutorials" sandbox="allow-same-origin">
+</iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{% static 'worker.jpg'%}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">मज़दूर हम है मंज़ूर</h5>
+      <p class="card-text" style='color:black;'>यह वायरस बाबा द्वारा प्रवासी मजदूरों को भोजन, आश्रय, संगरोधन आदि जैसी सेवाएं प्रदान करने में मदद करने के लिए शुरू की गई पहल है। </p>
+         <a href="#" class="card-link">कार्ड लिंक</a>
+        <div>
+         <a href="#" class="btn btn-primary" style='margin-left:auto;'>अभी दान कीजिए</a>
+        </div>
+    </div>
+  </div>
+    <div class="card">
+    <img src="{% static 'child_charity_1.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">बच्चों को बचाओ</h5>
+      <p class="card-text" style='color:black;'>हम भारत के प्रमुख स्वतंत्र बाल अधिकार संगठन हैं और बदल गए हैं
+पिछले 10 वर्षों में 10 मिलियन से अधिक बच्चों का जीवन। हम बचाने का काम करते हैं
+बच्चों का जीवन और उन्हें उनकी वास्तविक क्षमता प्राप्त करने में मदद करने के लिए प्रतिबद्ध है।
+बच्चों के अधिकारों को सुरक्षित रखने की लड़ाई हमारे सभी कार्यों की नींव है। विश्व में
+जहां लाखों बच्चे अपने अधिकारों से वंचित हैं क्योंकि वे कौन हैं या हैं
+जहाँ वे रहते हैं, हम सबसे वंचित और हाशिए पर पड़े बच्चों को सबसे पहले रखना चाहते हैं,
+और उनके अस्तित्व, सीखने और सुरक्षा के लिए बाधाओं से निपटने।</p>
+        <a href="https://support.savethechildren.in/change-a-childs-life/?utm_source=google-core&utm_medium=paid-text&utm_campaign=wc-donations-core&utm_term=donations&utm_content=donations&gclid=CjwKCAjw8J32BRBCEiwApQEKgdZ9L68wZSumPaBXSjyzQ0NZ4rM9O3_PHj2GFa2tLiQssGyD1lNimRoCTEkQAvD_BwE" class="card-link">कार्ड लिंक</a>
+        <div>
+         <a href="#" class="btn btn-primary" style='margin-left:auto;'>अभी दान कीजिए</a>
+        </div>
+    </div>
+  </div>
+  <div class="card">
+    <img src="{% static 'transgender_charity.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">ट्रांसजेंडर फंड</h5>
+      <p class="card-text" style='color:black;'>यह वायरस बाबा द्वारा ट्रांसजेंडर समुदाय को भोजन, आश्रय, संगरोध सेवा आदि प्रदान करके उन्हें मदद करने के लिए शुरू की गई पहल है।</p>
+         <a href="#" class="card-link">कार्ड लिंक</a>
+        <div>
+         <a href="#" class="btn btn-primary" style='margin-left:auto;'>अभी दान कीजिए</a>
+        </div>
+    </div>
+  </div>
+  
+  <div class="card">
+    <img src="{% static 'oldage_charity.png' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">हेल्पएज इंडिया</h5>
+      <p class="card-text" style='color:black;'>हेल्पएज इंडिया लगभग 4 दशकों से वंचित बुजुर्गों के साथ काम करने और भारत में अग्रणी दान है। यह 1978 में स्थापित किया गया था और यह 1860 के सोसायटी पंजीकरण अधिनियम के तहत पंजीकृत है। भारत में अनुमानित 106 मिलियन बुजुर्ग हैं। हेल्पएज उनकी जरूरतों जैसे यूनिवर्सल पेंशन, गुणवत्ता स्वास्थ्य देखभाल, एल्डर एब्यूज के खिलाफ कार्रवाई और केंद्र, राज्य सरकारों के साथ एक राष्ट्रीय, राज्य और सामाजिक स्तर पर कई और अधिक की वकालत करता है। यह बड़ी मित्रतापूर्ण नीतियों और उनके कार्यान्वयन की वकालत करता है। यह वरिष्ठ नागरिकों के संघों के साथ हाथ से काम करता है और उनके साथ काम करने वाली बड़ी जरूरतों को समझता है।</p>
+        <a href="https://www.helpageindia.org/" class="card-link">कार्ड लिंक</a>
+        <div>
+         <a href="#" class="btn btn-primary" style='margin-left:auto;'>अभी दान कीजिए</a>
+        </div>
+    </div>
+  </div>
+  
+  <div class="card">
+    <img src="{% static 'akshaya_patra_charity.jpg' %}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">अक्षय पात्र फाउंडेशन</h5>
+      <p class="card-text" style='color:black;'>अक्षय पात्र फाउंडेशन भारत में एक गैर सरकारी संगठन है जिसका मुख्यालय बेंगलुरु में है। हमारा संगठन सरकारी स्कूलों और सरकारी सहायता प्राप्त स्कूलों में मध्याह्न भोजन योजना लागू करके कक्षा की भूख को खत्म करने का प्रयास करता है। साथ ही, अक्षय पात्र का उद्देश्य कुपोषण का मुकाबला करना और सामाजिक-आर्थिक रूप से वंचित बच्चों की शिक्षा के अधिकार का समर्थन करना भी है।</p>
+        <a href="https://www.akshayapatra.org/" class="card-link">कार्ड लिंक</a>
+        <div>
+         <a href="#" class="btn btn-primary" style='margin-left:auto;'>अभी दान कीजिए</a>
+        </div>
+    </div>
+  </div>
+  
+</div>
+      </div>
+      
+
+
+    <!-- Footer -->
+    <br><br><br><br>
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3" style="color:white">© 2020 Copyright:
+      <a href="#"> virusbaba.com</a>
+    </div>
+    <!-- Copyright -->
+
+
+    <!-- Footer -->
+    <p translate="yes" style="font-family:montserrat;color:white;" align="center">Application Developed by: Nilesh Ohol.</p>
+    {% endblock %}
+    
+  </body>
+</html>
