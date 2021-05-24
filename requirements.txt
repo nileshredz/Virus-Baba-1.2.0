@@ -16,3 +16,6 @@ six==1.14.0
 sqlparse==0.3.1
 urllib3==1.25.9
 whitenoise==5.0.1
+pyrebase
+firebase
+firebase_admin
