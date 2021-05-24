@@ -16,7 +16,7 @@ The mobile responsive Web application facilitates services like Evaluation of In
 
 
 ## Data Flow Diagram:
-
+![alt text](chart/Data-Flow.JPG)
 
 ## Link:
 https://virus-baba.herokuapp.com/
