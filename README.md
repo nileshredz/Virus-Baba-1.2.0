@@ -12,3 +12,8 @@ The mobile responsive Web application facilitates services like Evaluation of In
 * Installed all the modules mentioned in <code>requirements.txt</code>.
 * The web application can be deployed in pythonanywhere.com or Heroku.
 
+## Process Flow
+
+
+## Data Flow Diagram
+
