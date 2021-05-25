@@ -13,10 +13,15 @@ The mobile responsive Web application facilitates services like Evaluation of In
 * The web application can be deployed in pythonanywhere.com or Heroku.
 
 ## Process Flow:
-
+<p align="center">
+<img src="chart/Process-Flow.JPG" style="width:50%;height:50%;">
+</p>
 
 ## Data Flow Diagram:
-![alt text](chart/Data-Flow.JPG)
+<p align="center">
+<img src="chart/Data-Flow.JPG" style="width:50%;height:50%;">
+</p>
+
 
 ## Link:
 https://virus-baba.herokuapp.com/
