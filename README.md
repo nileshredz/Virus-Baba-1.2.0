@@ -11,6 +11,7 @@ The mobile responsive Web application facilitates services like Evaluation of In
 * A terminal having Python version 3.8 or above installed.
 * Installed all the modules mentioned in <code>requirements.txt</code>.
 * The web application can be deployed in pythonanywhere.com or Heroku.
+* Browser should be JavaScript enabled.
 
 ## Process Flow:
 <p align="center">
